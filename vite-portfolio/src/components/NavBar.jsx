@@ -49,7 +49,7 @@ function NavBar() {
 
       {/* Navbar that slides in */}
       <div
-        className={`flex justify-between bg-slate-900  max-sm:absolute top-0 left-0 w-screen max-sm:p-3  ${
+        className={`flex justify-between bg-slate-900  max-sm:absolute top-0 left-0 w-screen max-sm:p-3 ${
           isNavOpen ? " max-sm:translate-y-0" : " max-sm:-translate-y-full"
         }  transform transition-all sm:justify-end 
         `}

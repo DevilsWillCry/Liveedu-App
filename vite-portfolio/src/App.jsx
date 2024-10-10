@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <main className="w-screen h-auto items-center justify-center">
+    <main className="w-screen h-auto items-center justify-center font-serif">
       <NavBar />
       <section id="home">
         <MainSection />
