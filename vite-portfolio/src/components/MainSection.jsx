@@ -8,9 +8,9 @@ const altTextColor = "text-myColor";
 
 function MainSection() {
   return (
-    <div className="flex flex-row justify-center items-center w-screen h-[100vh] bg-slate-950 mt-10 px-14 gap-x-5">
-      <div className="sm:text-[5vw] max-sm:text-[7vw] w-screen max-sm:h-[20vh] max-sm:text-center animate-slide-in-blurred-top">
-        <h1 className={`${textColor} font-bold block`}>Soy Miguel Angel</h1>
+    <div className="flex flex-row justify-center items-center w-screen h-[100vh] bg-[#070707] mt-10 px-14 gap-x-5">
+      <div className="sm:text-[5vw] max-sm:text-[6.2vw] w-screen max-sm:h-[20vh] max-sm:text-center animate-slide-in-blurred-top">
+        <h1 className={`${textColor} font-bold block`}>{"{"} Soy Miguel Angel</h1>
         <span className={`${altTextColor} font-bold`}>
           <ReactTyped
             strings={[
@@ -22,9 +22,10 @@ function MainSection() {
             backSpeed={50}
             loop
           />
+          {"}"}
         </span>
       </div>
-      <div className="flex max-sm:hidden items-center justify-center w-[35vw]  h-auto rounded-3xl bg-slate-950 border-2 transition-all animate-slide-in-blurred-top">
+      <div className="flex max-sm:hidden items-center justify-center w-[35vw]  h-auto rounded-3xl bg-[#070707] border-2 transition-all animate-slide-in-blurred-top">
         <img
           className="w-[100%] h-[100%] rounded-3xl object-contain drop-shadow-[0_35px_35px_rgba(249,246,247,0.2)] transition-all"
           src={mainImage}

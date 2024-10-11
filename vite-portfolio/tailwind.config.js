@@ -1,5 +1,6 @@
+const withMT = require("@material-tailwind/react/utils/withMT");
 /** @type {import('tailwindcss').Config} */
-export default {
+export default withMT( {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -117,9 +118,13 @@ export default {
       backgroundImage: {
         'background-main': "url('/src/assets/main-background.jpg')",
       }
-
-
+    },
+    screens: {
+      'max-sm': {'max': '640px'},  // Para pantallas de máximo 640px
+      'max-md': {'max': '768px'},  // Para pantallas de máximo 768px
+      'max-lg': {'max': '1024px'}, // Para pantallas de máximo 1024px
+      'max-xl': {'max': '1280px'}, // Puedes agregar más breakpoints si es necesario
     },
   },
   plugins: [],
-}
+})

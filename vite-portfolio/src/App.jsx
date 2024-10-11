@@ -15,7 +15,7 @@ function App() {
       <section id="about" className="section relative overflow-hidden bg-myColor flex justify-center items-center  h-screen w-screen transition-all duration-500 -z-10">
         <AboutSection />
       </section>
-      <section id="tecnologies" className="h-screen w-screen flex flex-col items-center justify-center">
+      <section id="technologies" className="h-screen w-screen flex flex-col items-center justify-center bg-[#070707]">
         <TecnologiesSection/>
       </section>
     </main>
