@@ -1,15 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "#home", current: true},
   { name: "About Me", href: "#about"},
+  { name: "Tecnologies", href: "#tecnologies"},
   { name: "Projects", href: "#projects"},
   { name: "Experience & Studies", href: "#exp-stud"},
   { name: "Contact", href: "#contact"},
 ];
 
 function NavBar() {
+
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [currentNavigation, setNavigation] = useState(navigation);
 
@@ -37,6 +39,8 @@ function NavBar() {
     setIsNavOpen(false); 
   }
 
+
+
   return (
     <div className="fixed top-0 left-0 w-screen h-auto flex bg-slate-900 max-sm:justify-end max-sm:items-end max-sm:p-3  sm:p-3 sm:items-center z-50">
       {/* Text NavBar in PC resolution*/}
@@ -49,7 +53,7 @@ function NavBar() {
 
       {/* Navbar that slides in */}
       <div
-        className={`flex justify-between bg-slate-900  max-sm:absolute top-0 left-0 w-screen max-sm:p-3 ${
+        className={`flex justify-between bg-slate-900 max-sm:absolute top-0 left-0 w-screen max-sm:p-3 ${
           isNavOpen ? " max-sm:translate-y-0" : " max-sm:-translate-y-full"
         }  transform transition-all sm:justify-end 
         `}

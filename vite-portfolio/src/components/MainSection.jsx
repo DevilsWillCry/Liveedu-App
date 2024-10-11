@@ -9,7 +9,7 @@ const altTextColor = "text-myColor";
 function MainSection() {
   return (
     <div className="flex flex-row justify-center items-center w-screen h-[100vh] bg-slate-950 mt-10 px-14 gap-x-5">
-      <div className="sm:text-[5vw] max-sm:text-[8vw] w-screen max-sm:h-[30vh] max-sm:text-center animate-slide-in-blurred-top">
+      <div className="sm:text-[5vw] max-sm:text-[7vw] w-screen max-sm:h-[20vh] max-sm:text-center animate-slide-in-blurred-top">
         <h1 className={`${textColor} font-bold block`}>Soy Miguel Angel</h1>
         <span className={`${altTextColor} font-bold`}>
           <ReactTyped
