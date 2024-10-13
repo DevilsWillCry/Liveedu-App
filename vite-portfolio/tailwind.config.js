@@ -101,6 +101,14 @@ export default withMT( {
             boxShadow: '0 0 20px 0px rgba(0, 0, 0, 0.35)',
           },
         },
+        rotate360: {
+          from: { transform: 'rotateY(0deg)' },
+          to: { transform: 'rotateY(-360deg)' },
+        },
+        infiniteScroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(0px - 100%))' },
+        },
       },
       animation: {
         'scale-in-ver-top': 'scale-in-ver-top 1s ease-in-out both',
@@ -114,13 +122,18 @@ export default withMT( {
         'vibrate': 'vibrate 0.6s linear infinite both',
         'shakeHorizontal': 'shakeHorizontal  1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite',
         'shadowDropCenter': 'shadowDropCenter 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'rotate360': 'rotate360 30s infinite linear forwards',
+        'infiniteScroll': 'infiniteScroll 10s infinite linear forwards',
       },
       backgroundImage: {
         'background-main': "url('/src/assets/main-background.jpg')",
+      },
+      boxShadow: {
+        'custom-inset': 'inset 0 0 0 2000px rgba(0, 0, 0, 0.5)',
       }
     },
     screens: {
-      'max-sm': {'max': '640px'},  // Para pantallas de máximo 640px
+      'max-sm': {'max': '540px'},  // Para pantallas de máximo 640px
       'max-md': {'max': '768px'},  // Para pantallas de máximo 768px
       'max-lg': {'max': '1024px'}, // Para pantallas de máximo 1024px
       'max-xl': {'max': '1280px'}, // Puedes agregar más breakpoints si es necesario

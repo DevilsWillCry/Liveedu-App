@@ -11,7 +11,7 @@ function AboutSection() {
     <div className="absolute flex flex-row justify-between items-center h-[80%] w-[90%] mt-12 z-10 bg-white opacity-95 rounded-xl animate-shadowDropCenter max-sm:flex-col gap-5">
       <div className="h-full w-[80vw] max-sm:w-full  max-sm:absolute max-sm:-z-10 max-sm:opacity-100 max-sm:contrast-150 max-sm:rounded-xl">
         <img
-          className="max-w-[100%] h-[100%] object-cover drop-shadow-[0_35px_35px_rgba(249,246,247,0.2)] transition-all rounded-tl-xl rounded-bl-xl max-sm:max-w-[100%] max-sm:rounded-xl"
+          className="max-w-[100%] h-[100%] object-cover drop-shadow-[0_35px_35px_rgba(249,246,247,0.2)]  transition-all rounded-tl-xl rounded-bl-xl max-sm:max-w-[100%] max-sm:rounded-xl"
           src={imageAbout}
           alt="assets/about-image.jpg"
         />

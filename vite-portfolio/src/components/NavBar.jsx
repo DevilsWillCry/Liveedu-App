@@ -33,11 +33,6 @@ const navigation = [
     image: <TrophyIcon className="text-myColor size-5" />,
   },
   {
-    name: "Experience & Studies",
-    href: "#exp-stud",
-    image: <AcademicCapIcon className="text-myColor size-5" />,
-  },
-  {
     name: "Contact",
     href: "#contact",
     image: <PhoneIcon className="text-myColor size-5" />,
@@ -73,7 +68,7 @@ function NavBar() {
   };
 
   return (
-    <div className="flex flex-row  fixed top-0 left-0 w-screen h-auto bg-black max-sm:items-end max-sm:p-3  sm:p-3 sm:items-center z-50 max-sm:justify-between">
+    <div className="flex flex-row  fixed top-0 left-0 w-screen h-auto bg-black max-sm:items-end max-sm:p-3  sm:p-3 sm:items-center max-sm:justify-between z-50">
       {/* Text NavBar in PC resolution*/}
       <div className="bg-white relative rounded-full h-full w-[12%]">
         <img

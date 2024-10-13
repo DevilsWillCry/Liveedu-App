@@ -1,6 +1,5 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
-
 import mainImage from "../assets/main-image.png";
 
 const textColor = "text-white";
