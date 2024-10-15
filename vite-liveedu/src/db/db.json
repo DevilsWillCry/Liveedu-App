@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+573017815945",
+      "password": "password123"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "+573017815945",
+      "password": "secret123"
+    },
+    {
+      "id": "5caf",
+      "name": "Miguel Angel",
+      "email": "miguel.delta21@gmail.com",
+      "phone": "573178465152",
+      "password": "password123"
+    }
+  ]
+}

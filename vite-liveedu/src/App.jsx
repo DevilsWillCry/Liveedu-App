@@ -5,8 +5,10 @@ import ImageSlider from "./components/ImageSlider";
 import Slider1 from "./assets/slider-1.png";
 import Slider2 from "./assets/slider-2.png";
 import Slider3 from "./assets/slider-3.png";
+
 import LoginUser from "./components/LoginUser";
 import RegisterUser from "./components/RegisterUser";
+import VerificationCode from "./components/VerificationCode";
 
 function App() {
   const images = [Slider1, Slider2, Slider3];
@@ -17,6 +19,7 @@ function App() {
         <Route path="/" element={<ImageSlider images={images}/>} />
         <Route path="/login" element={<LoginUser/>} />
         <Route path="/register" element={<RegisterUser/>} />
+        <Route path="/verification-account" element={<VerificationCode />} /> 
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>

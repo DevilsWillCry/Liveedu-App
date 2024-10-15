@@ -6,7 +6,7 @@ const ImageSlider = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
-  // Función para ir a la imagen siguiente
+  
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? images.length : prevIndex + 1

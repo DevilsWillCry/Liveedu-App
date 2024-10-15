@@ -3,23 +3,27 @@ import EyeOpen from "../assets/eye-svgrepo-com.svg";
 import EyeClosed from "../assets/eye-closed-svgrepo-com.svg";
 
 
-function PasswordInput({}) {
+function PasswordInput({onChange}) {
   const [showPassword, setShowPassword] = useState(false);
 
   const HandleImgPassword = () => {
     setShowPassword(!showPassword);
   };
+
+
   return (
     <div className="relative">
       <input
+        onChange={onChange}
         className="w-full rounded-xl focus:outline-none p-3"
-        type="text"
+        type={showPassword ? "text" : "password" }
         placeholder="Password"
+        required
       />
       <img
         onClick={HandleImgPassword}
-        className="absolute w-7 h-7 -top-0 right-0  -translate-x-2 translate-y-1/2 object-cover cursor-pointer"
-        src={showPassword ? EyeOpen : EyeClosed}
+        className="absolute w-8 h-6 -top-0 right-0  -translate-x-2 translate-y-1/2 object-cover cursor-pointer"
+        src={showPassword ? EyeClosed :  EyeOpen}
         alt=""
       />
     </div>
