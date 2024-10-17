@@ -21,7 +21,7 @@ function AboutSection() {
         <h1 className="text-[3vw] text-center font-extrabold transform-gpu mb-5 text-myColor max-sm:text-[8vw]">
           Sobre Mí
         </h1>
-        <p className="text-[1.4vw] text-justify break-words tracking-wide hyphens-auto max-sm:text-[4vw] max-sm:text-white max-sm:tracking-tighter">
+        <p className="text-[1.7vw] text-justify break-words tracking-wide hyphens-auto max-sm:text-[4vw] max-sm:text-white max-sm:tracking-tighter">
           <strong className="inline-block text-myColor">
             ¡Hola!
           </strong>

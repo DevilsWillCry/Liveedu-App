@@ -31,12 +31,13 @@ function App() {
         id="projects"
         className="section relative w-screen h-screen flex items-center justify-center bg-myColor"
       >
-        <ProjectsSection />
+        
       </section>
       <section
         id="contact"
         className="section relative w-screen h-screen flex items-center justify-center bg-[#070707]"
       >
+        
         {/* <ContactSection/> */}
       </section>
     </main>

@@ -13,7 +13,7 @@ const Carousel = (props) => {
 
       // Cambia el valor de translateZpos según el ancho de la ventana
       if (width <= 540) {
-        setTranslateZpos(50 / 2 / Math.tan(Math.PI / totalElements) + 10);
+        setTranslateZpos(80 / 2 / Math.tan(Math.PI / totalElements) + 10);
       } else if (width <= 1024) {
         setTranslateZpos(100 / 2 / Math.tan(Math.PI / totalElements) + 10);
       } else {
@@ -36,22 +36,20 @@ const Carousel = (props) => {
   
 
   return (
-    <div className="container relative text-center text-white lg:w-[180px] max-sm:w-[80px] sm:w-[140px] h-auto  [perspective:800px] mt-[200px] mx-auto mb-0 z-10">
-      <h1 className="flex lg:text-[3vw] max-sm:text-[8vw] sm:text-[8vw] text-center mb-5">
-        <WaveText text={"Tecnologías"} />
+    <div className="container relative text-center text-white lg:w-[180px] max-sm:w-[50px] sm:w-[140px] h-auto [perspective:800px] mt-[200px] mx-auto mb-0 z-10">
+      <h1 className="flex lg:text-[2.5vw] max-sm:text-[3.5vw] sm:text-[6.5vw] text-center mb-5 font-extrabold">
+        TECNOLOGÍAS
       </h1>
       <div
-        className="carousel absolute w-[100%] h-[100%] [transform-style:preserve-3d] animate-rotate360 "
+        className="carousel absolute w-[100%] h-[100%] [transform-style:preserve-3d] animate-rotate360 [transform-origin:center] lg:left-0 max-sm:left-1/2 sm:left-1/2 "
         style={{ backfaceVisibility: "hidden", willChange: "transform" }}
       >
         {props.arrayElements.map((elemento, index) => (
           <div
             key={elemento.id}
-            className={`carousel__face absolute flex flex-col text-center lg:w-[250px] max-sm:w-[50px] sm:w-[100px] h-auto top-[0px] bg-cover`}
+            className={`carousel__face absolute flex flex-col text-center lg:w-[150px] max-sm:w-[50px] sm:w-[100px] h-auto top-[30px] bg-cover`}
             style={{
-              transform: `rotateY(${
-                (360 / totalElements) * index
-              }deg) translateZ(${translateZpos}px)`,
+              transform: `rotateY(${(360 / totalElements) * index}deg) translateZ(${translateZpos}px)`,
             }}
           >
             <img

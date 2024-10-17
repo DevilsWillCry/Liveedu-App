@@ -71,6 +71,11 @@ const arrayShowElements = [
         image: arrayElements.find((element) => element.name === "JavaScript")
           ?.image,
       },
+      {
+        name: "Tailwind CSS",
+        image: arrayElements.find((element) => element.name === "Tailwind CSS")
+          ?.image,
+      },
     ],
     projectName: "Diseño App De Adopción",
     projectImage: ImageProject3,
