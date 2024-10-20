@@ -22,7 +22,7 @@ function PasswordInput({onChange}) {
       />
       <img
         onClick={HandleImgPassword}
-        className="absolute w-8 h-6 -top-0 right-0  -translate-x-2 translate-y-1/2 object-cover cursor-pointer"
+        className="absolute w-8 h-6 -top-0 right-0  -translate-x-2 translate-y-1/2 object-cover cursor-pointer "
         src={showPassword ? EyeClosed :  EyeOpen}
         alt=""
       />

@@ -5,21 +5,40 @@
       "name": "John Doe",
       "email": "john.doe@example.com",
       "phone": "+573017815945",
-      "password": "password123"
+      "password": "password123",
+      "coins": 400
     },
     {
       "id": "2",
       "name": "Jane Smith",
       "email": "jane.smith@example.com",
       "phone": "+573017815945",
-      "password": "secret123"
+      "password": "secret123",
+      "coins": 400
     },
     {
-      "id": "5caf",
-      "name": "Miguel Angel",
-      "email": "miguel.delta21@gmail.com",
-      "phone": "573178465152",
-      "password": "password123"
+      "id": "5576",
+      "name": "Maya Alejandra",
+      "email": "mayra@gmail.com",
+      "phone": "+573017815945",
+      "password": "password123",
+      "coins": 400
+    },
+    {
+      "id": "ce7e",
+      "name": "Ernesto Meñaca",
+      "email": "ernesto@gmail.com",
+      "phone": "+573155403143",
+      "password": "password123",
+      "coins": 400
+    },
+    {
+      "id": "93d9",
+      "name": "Silvia Coral",
+      "email": "silvia@gmail.com",
+      "phone": "+573017815945",
+      "password": "password123",
+      "coins": 400
     }
   ]
 }

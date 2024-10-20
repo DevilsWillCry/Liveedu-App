@@ -1,19 +1,17 @@
 import React, { useRef, useState } from "react";
 
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
-import CheckImage from "../assets/check-mark-button-svgrepo-com.svg"
-import WrongCheckImage from "../assets/freepicdownloader.com_-rounded-cross-vector-medium.svg"
+import CheckImage from "../assets/check-mark-button-svgrepo-com.svg";
+import WrongCheckImage from "../assets/freepicdownloader.com_-rounded-cross-vector-medium.svg";
 
 import MyButton from "./MyButton";
 
 import { useNavigate } from "react-router-dom";
 
 import {
-  Button,
   Dialog,
   DialogHeader,
   DialogBody,
-  DialogFooter,
 } from "@material-tailwind/react";
 
 function VerificationCode() {
@@ -22,7 +20,6 @@ function VerificationCode() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [check, setCheck] = useState(false);
-
 
   // Comprobar el código de verificación
   const checkVerification = async (e, number) => {
@@ -41,14 +38,14 @@ function VerificationCode() {
       const data = await response.json();
       console.log(data.status);
       if (data.status == "approved") {
-        setOpen(!open)
-        setCheck(true)
+        setOpen(!open);
+        setCheck(true);
         setTimeout(() => {
           navigate("/home");
         }, "3000");
       } else {
-        setOpen(!open)
-        setCheck(false)
+        setOpen(!open);
+        setCheck(false);
       }
     }
   };
@@ -74,9 +71,13 @@ function VerificationCode() {
 
   const handleOpen = () => setOpen(!open);
 
+  const handleNavigate = () => {
+    navigate("/register");
+  };
+
   return (
     <div className="flex flex-col justify-star items-center h-full w-full p-3">
-      <div className="w-full mb-14">
+      <div onClick={handleNavigate} className="w-full mb-14">
         <ArrowLeftIcon className=" transition-all w-[20px] h-[20px] hover:scale-125 hover:-translate-x-2" />
       </div>
 
@@ -112,11 +113,20 @@ function VerificationCode() {
         animate={{
           mount: { scale: 1, y: 0 },
           unmount: { scale: 0.9, y: -100 },
-        }}
+        }
+      }
       >
-        <DialogHeader className={` ${check ? "text-green-500": "text-red-400"}`}>Verification Successful</DialogHeader>
+        <DialogHeader
+          className={` ${check ? "text-green-500" : "text-red-400"} justify-center`}
+        >
+          {check ? "Verification Successful" : "Verification Failed"}
+        </DialogHeader>
         <DialogBody className="flex justify-center">
-          <img className="w-[50%] h-[50%]" src={ check ? CheckImage: WrongCheckImage } alt="Check Mark" />
+          <img
+            className="w-[50%] h-[50%]"
+            src={check ? CheckImage : WrongCheckImage}
+            alt="Check Mark"
+          />
         </DialogBody>
       </Dialog>
     </div>

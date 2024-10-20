@@ -9,6 +9,7 @@ import Slider3 from "./assets/slider-3.png";
 import LoginUser from "./components/LoginUser";
 import RegisterUser from "./components/RegisterUser";
 import VerificationCode from "./components/VerificationCode";
+import HomePage from "./components/HomePage";
 
 function App() {
   const images = [Slider1, Slider2, Slider3];
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<LoginUser/>} />
         <Route path="/register" element={<RegisterUser/>} />
         <Route path="/verification-account" element={<VerificationCode />} /> 
+        <Route path="/home" element={<HomePage />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>

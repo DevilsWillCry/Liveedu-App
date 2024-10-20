@@ -5,10 +5,19 @@ import { Link, useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 import PasswordInput from "./PassWordInput";
 
-import getUsers  from "../services/users/getUsers"
-import postUsers  from "../services/users/postUsers"
-import { usersURL} from "../services/routes"
+import getUsers from "../services/users/getUsers";
+import postUsers from "../services/users/postUsers";
+import { usersURL } from "../services/routes";
+import countrys from "../db/country-codes.json";
 
+import { ArrowDownIcon } from "@heroicons/react/24/solid";
+
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
 
 function RegisterUser() {
   const navigate = useNavigate();
@@ -17,34 +26,52 @@ function RegisterUser() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [prefix, setPrefix] = useState(countrys[0].phone);
+  const [imageCountry, setImageCountry] = useState(countrys[0].image);
+  const [phoneLengthCountry, setPhoneLengthCountry] = useState(countrys[0].phoneLength);
 
-  console.log(name, email, phone, password)
+  console.log("Name: ",name);
+  console.log("email:", email);
+  console.log("phone:", prefix + phone);
+  console.log("password:", password);
+  console.log("Prefijo:", prefix);
+  console.log("Imagen del país:", imageCountry);
+  console.log("Longitud del número de teléfono:", phoneLengthCountry);
+  console.log("phone length:", phone.length);
+
 
   const sendVerification = async (e) => {
     e.preventDefault();
 
+    if(phone.length != phoneLengthCountry){
+      alert("El número de teléfono no coincide con la longitud del país");
+      return;
+    }
+
+
     const userData = {
       name,
       email,
-      phone,
+      phone: (prefix + phone),
       password,
-    }
+      coins:400
+    };
     //Verificar si existe en la base de datos JSON
+
     try {
       const users = await getUsers(usersURL);
-      console.log(users)
-      const userExist = users.some((user) => user.email === email && user.phone === phone);
+      console.log(users);
+      const userExist = users.some((user) => user.email === email);
       if (userExist) {
         alert("El correo electrónico ya está registrado");
         return;
-      }
-      else{
+      } else {
         await postUsers(usersURL, userData);
         alert("Cuenta creada exitosamente!");
         navigate("/verification-account");
       }
     } catch (error) {
-      console.error("Error al buscar usuarios en la base de datos:", error); 
+      console.error("Error al buscar usuarios en la base de datos:", error);
     }
 
     try {
@@ -53,19 +80,29 @@ function RegisterUser() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ number: "+573017815945" }),
+        body: JSON.stringify({ number: (prefix + phone) }),
       });
-  
+
       const data = await response.json();
       console.log(data);
       navigate("/verification-account");
-      
     } catch (error) {
       console.error("Error al enviar la petición de verificación:", error);
     }
   };
 
-  return(
+  const handleCountry = (element) => {
+    setPrefix(
+      element.phone && element.phone.length > 0 ? element.phone[0] : "N/A"
+    );
+    setImageCountry(element.image);
+    
+    setPhoneLengthCountry(
+      element.phone && element.phone.length > 0 ? element.phoneLength : 0
+    );
+  };
+
+  return (
     <div className="flex flex-col w-full h-full items-center justify-center mt-[20%]">
       <div className="flex flex-col text-star p-3 mr-20">
         <h1 className="font-bold text-2xl">Create New Account</h1>
@@ -75,7 +112,10 @@ function RegisterUser() {
         </p>
       </div>
       {/* Envuelve los inputs en un formulario */}
-      <form onSubmit={sendVerification} className="flex flex-col items-center justify-center w-full my-5 gap-y-3">
+      <form
+        onSubmit={sendVerification}
+        className="flex flex-col items-center justify-center w-full my-5 gap-y-3"
+      >
         <div className="rounded-xl p-[0.15rem] bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] w-[95%]">
           <input
             className="w-full rounded-xl p-3 focus:outline-none"
@@ -96,10 +136,39 @@ function RegisterUser() {
             required
           />
         </div>
-
-        <div className="rounded-xl p-[0.15rem] bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] w-[95%]">
+        <div className="relative rounded-xl p-[0.15rem] bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] w-[95%] mt-6">
+          <Menu>
+            <MenuHandler>
+              <div className="text-black flex flex-row justify-center gap-1 p-1 bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] rounded-xl shadow-2xl absolute max-w-[100%] h-[100%] -top-1/2 -translate-y-1  left-0 cursor-pointer z-0">
+                <img className="w-[30px] h-[30px]" src={imageCountry} alt="" />
+                {prefix}
+                <ArrowDownIcon className="w-[20px] h-[25px] align-middle text-black" />
+              </div>
+            </MenuHandler>
+            <MenuList className="w-auto h-[50%] scroll-smooth overflow-y-auto">
+              {countrys.map((element, index) => (
+                <MenuItem
+                  key={index}
+                  className="flex flex-row"
+                  onClick={() => handleCountry(element)}
+                >
+                  <div className="flex flex-row w-[25%]">
+                    <img
+                      className="w-[20px] h-[20px]"
+                      src={element.image}
+                      alt={element.name + ".jpg"}
+                    />
+                    {element.phone && element.phone.length > 0
+                      ? element.phone[0]
+                      : "N/A"}
+                  </div>
+                  {element.name}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
           <input
-            className="w-full rounded-xl p-3 focus:outline-none"
+            className="relative w-full rounded-xl p-3 focus:outline-none z-10"
             type="number"
             placeholder="Phone number"
             value={phone} // Enlazar el estado
@@ -113,7 +182,8 @@ function RegisterUser() {
             onChange={(e) => setPassword(e.target.value)} // Actualizar el estado
           />
         </div>
-        <MyButton type="submit" text={"Create"} /> {/* Cambia el tipo a "submit" */}
+        <MyButton type="submit" text={"Create"} />{" "}
+        {/* Cambia el tipo a "submit" */}
       </form>
       <div>
         <p className="text-center text-sm">
