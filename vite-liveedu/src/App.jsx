@@ -10,18 +10,29 @@ import LoginUser from "./components/LoginUser";
 import RegisterUser from "./components/RegisterUser";
 import VerificationCode from "./components/VerificationCode";
 import HomePage from "./components/HomePage";
+import NavbarLayout from "./components/NavBar";
+import TestsCourses from "./components/TestsCourses";
+import Profile from "./components/Profile";
+import Stadistics from "./components/Stadistics";
+
 
 function App() {
   const images = [Slider1, Slider2, Slider3];
 
+
   return (
     <main className="flex flex-col h-screen items-center justify-center font-Inter">
       <Routes>
-        <Route path="/" element={<ImageSlider images={images}/>} />
-        <Route path="/login" element={<LoginUser/>} />
-        <Route path="/register" element={<RegisterUser/>} />
-        <Route path="/verification-account" element={<VerificationCode />} /> 
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<ImageSlider images={images} />} />
+        <Route path="/login" element={<LoginUser />} />
+        <Route path="/register" element={<RegisterUser />} />
+        <Route path="/verification-account" element={<VerificationCode />} />
+        <Route element={<NavbarLayout />}>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/tests" element={<TestsCourses />} />
+          <Route path="/stadistics" element={<Stadistics />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>

@@ -17,7 +17,7 @@ function HomePage() {
             Let's start learning!
           </p>
         </div>
-        <div className="flex flex-row flex-shrink-1 w-[50%] h-auto items-center justify-between text-center">
+        <div className="flex flex-row flex-shrink-1 w-[50%] h-auto items-center justify-center text-center gap-x-5">
           <div className="flex flex-row max-w-auto max-h-[30%]">
             <img className="w-[20px] h-[25px]" src={Coin} alt="" />
             <span className="text-base font-bold">400</span>
@@ -30,7 +30,7 @@ function HomePage() {
       </div>
       <div className="p-3">
         <h1>Courses</h1>
-        <div className="flex flex-shrink-0 w-full h-auto overflow-x-auto p-3 gap-5 snap-x snap-mandatory">
+        <div className="flex justify-evenly flex-shrink-0 w-full h-auto overflow-x-auto p-3 gap-5 snap-x snap-mandatory">
           <Course
             rating={5.5}
             image={elementary}
