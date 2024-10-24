@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import Coin from "../assets/coin-svgrepo-com.svg";
 
@@ -74,9 +74,11 @@ function CourseDetail() {
       <div className="overflow-auto scroll-auto w-full h-full">
         {course.AllCourses.map((courses, index) => (
           <div className="p-1 mr-3 ml-2" key={index}>
+            <Link key={course.id} to={`/course/${course.id}/theme/${courses.id}`}>
             <h1 className="w-full bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] opacity-90  saturate-[0.7] rounded-lg p-2">
-                {Object.keys(courses)[0] + " " + course.level} 
+                {courses.title + " " + course.level} 
             </h1>
+            </Link>
           </div>
         ))}
       </div>
@@ -84,5 +86,6 @@ function CourseDetail() {
     </div>
   );
 }
+
 
 export default CourseDetail;

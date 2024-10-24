@@ -48,7 +48,12 @@
       "duration": "60 minutes",
       "AllCourses": [
         {
-          "HTML": [
+          "id":"1",
+          "title": "HTML",
+          "image": "/src/assets/html-5-svgrepo-com.svg",
+          "description": "Learn the basics of HTML",
+          "duration": "60 minutes",          
+          "themes": [
             {
               "name": "Introduction to HTML",
               "video": "https://example.com/html_intro",
@@ -102,7 +107,12 @@
           ]
         },
         {
-          "CSS": [
+          "id":"2",
+          "title": "CSS",
+          "image": "/src/assets/css-3-svgrepo-com.svg",
+          "description": "Learn the basic features of CSS",
+          "duration": "60 minutes",      
+          "themes": [
             {
               "name": "Introduction to CSS",
               "video": "https://example.com/css_intro",
@@ -156,7 +166,12 @@
           ]
         },
         {
-          "JavaScript": [
+          "id":"3",
+          "title": "JavaScript",
+          "image": "/src/assets/js-svgrepo-com.svg",
+          "description": "Learn the fundamentals of JavaScript",
+          "duration": "60 minutes",      
+          "themes": [
             {
               "name": "Introduction to JavaScript",
               "video": "https://example.com/js_intro",
@@ -223,7 +238,12 @@
       "duration": "90 minutes",
       "AllCourses": [
         {
-          "HTML": [
+          "id":"1",
+          "title": "HTML",
+          "image": "/src/assets/html-5-svgrepo-com.svg",
+          "description": "Learn the advanced topics of HTML",
+          "duration": "60 minutes",      
+          "themes": [
             {
               "name": "Advanced HTML Forms and Validation",
               "video": "https://example.com/html_advanced_forms",
@@ -277,7 +297,12 @@
           ]
         },
         {
-          "CSS": [
+          "id":"2",
+          "title": "CSS",
+          "image": "/src/assets/css-3-svgrepo-com.svg",
+          "description": "Learn the advanced features of CSS",
+          "duration": "60 minutes",      
+          "themes": [
             {
               "name": "Advanced CSS Selectors",
               "video": "https://example.com/css_advanced_selectors",
@@ -331,7 +356,12 @@
           ]
         },
         {
-          "JavaScript": [
+          "id":"3",
+          "title": "JavaScript",
+          "image": "/src/assets/js-svgrepo-com.svg",
+          "description": "Learn the advanced features of JavaScript",
+          "duration": "60 minutes",      
+          "themes": [
             {
               "name": "JavaScript ES6: New Features and Syntax",
               "video": "https://example.com/js_es6_features",

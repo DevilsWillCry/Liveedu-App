@@ -15,6 +15,20 @@ export default  withMT( {
         'max-lg': {'max': '1024px'}, // Para pantallas de máximo 1024px
         'max-xl': {'max': '1280px'}, // Puedes agregar más breakpoints si es necesario
       },
+      keyframes: {
+        autoShowAnimation: {
+          '0%': { opacity: '0', transform: 'translateY(200px) scale(0.3)' },
+          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        'bottom-fade': {
+          '0%': { maskImage: 'linear-gradient(to bottom, black 100%, transparent 100%)' },
+          '100%': { maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' },
+        },
+      },
+      animation: {
+        autoShow: 'autoShowAnimation 1s ease-in-out both',
+        'bottom-fade': 'bottom-fade 0s ease-in-out forwards',
+      },
     },
   },
   plugins: [],

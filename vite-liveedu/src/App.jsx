@@ -15,11 +15,11 @@ import TestsCourses from "./components/TestsCourses";
 import Profile from "./components/Profile";
 import Stadistics from "./components/Stadistics";
 import CourseDetail from "./components/CourseDetail";
-
+import CourseThemeDetail from "./components/CourseThemeDetail";
+import FooterNameLayout from "./components/FooterName";
 
 function App() {
   const images = [Slider1, Slider2, Slider3];
-
 
   return (
     <main className="flex flex-col h-screen items-center justify-center font-Inter">
@@ -34,7 +34,11 @@ function App() {
           <Route path="/stadistics" element={<Stadistics />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
-        <Route path= "/course/:id" element= {<CourseDetail />} />
+        <Route path="/course/:id" element={<CourseDetail />} />
+        <Route
+          path="/course/:id/theme/:themeId"
+          element={<CourseThemeDetail />}
+        />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>
