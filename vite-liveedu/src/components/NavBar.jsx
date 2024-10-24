@@ -30,14 +30,14 @@ const ArrayIcons = [
 ];
 
 function NavBar() {
-  const [activeIcon, setActiveIcon] = useState(null); // Estado para almacenar el icono presionado
+  const [activeIcon, setActiveIcon] = useState(0); // Estado para almacenar el icono presionado
 
   const handleToggleMenu = (index) => {
     setActiveIcon(index !== activeIcon ? index: null);
   };
 
   return (
-    <nav className="absolute -bottom-2 right-0 bg-white rounded-tr-2xl rounded-tl-2xl shadow-2xl border-2 p-4 w-full z-20">
+    <nav className="fixed -bottom-2 right-0 bg-white rounded-tr-2xl rounded-tl-2xl shadow-2xl border-2 p-4 w-full z-20">
       <ul className="flex flex-row justify-around text-black transition-all transform-gpu items-center">
         {ArrayIcons.map((item, index) => (
           <li className="items-center" key={index}>

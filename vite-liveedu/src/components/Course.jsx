@@ -13,7 +13,7 @@ function Course({ rating, image, title, description, price }) {
         <img
           className="w-[200px] h-[200px] object-cover rounded-2xl"
           src={image}
-          alt="advanced-courses.png"
+          alt={image}
         />
       </div>
       <div className="flex flex-row text-[3vw] mt-3 justify-between text-[#4B4B4B]">
@@ -21,7 +21,7 @@ function Course({ rating, image, title, description, price }) {
           <h1 className="text-lg font-bold">{title}</h1>
           <p className="mt-2">{description}</p>
         </div>
-        <div className="flex flex-row w-[35%] h-[20px] justify-center items-center">
+        <div className="flex flex-row w-[35%] h-[20px] justify-center items-center mt-1">
           <img className="max-w-full max-h-full" src={Coin} alt="" />
           <span className="text-xs ml-2 font-bold">{price}</span>
         </div>

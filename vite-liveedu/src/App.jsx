@@ -14,6 +14,7 @@ import NavbarLayout from "./components/NavBar";
 import TestsCourses from "./components/TestsCourses";
 import Profile from "./components/Profile";
 import Stadistics from "./components/Stadistics";
+import CourseDetail from "./components/CourseDetail";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/stadistics" element={<Stadistics />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
+        <Route path= "/course/:id" element= {<CourseDetail />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>

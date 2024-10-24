@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import MyButton from "./MyButton";
@@ -10,6 +10,8 @@ import { usersURL } from "../services/routes";
 import countrys from "../db/country-codes.json";
 
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
+
+import Swal from "sweetalert2";
 
 import {
   Menu,
@@ -24,9 +26,14 @@ function LoginUser() {
   const [password, setPassword] = useState("");
   const [prefix, setPrefix] = useState(countrys[0].phone);
   const [imageCountry, setImageCountry] = useState(countrys[0].image);
-  const [phoneLengthCountry, setPhoneLengthCountry] = useState(countrys[0].phoneLength);
+  const [phoneLengthCountry, setPhoneLengthCountry] = useState(
+    countrys[0].phoneLength
+  );
+  const [userState, setUser] = useState({});
+  const [changePage, setChangePage] = useState(false);
+
   const navigate = useNavigate();
-  
+
   console.log("phone:", prefix + phone);
   console.log("password:", password);
   console.log("Prefijo:", prefix);
@@ -34,30 +41,51 @@ function LoginUser() {
   console.log("Longitud del número de teléfono:", phoneLengthCountry);
   console.log("phone length:", phone.length);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Lógica para validar los datos del backend
     const users = await getUsers(usersURL);
 
-    if(phone.length == phoneLengthCountry){
-      const user = users.find(
-        (u) => u.phone === (prefix + phone) && u.password === password);
-      // Aquí debes implementar el código para validar los datos y enviarlos al backend
-      if (user) {
-        // Si el usuario existe, redireccionar a la página principal
-        // En este caso, la página principal es la raíz ("/")
-        alert("Logged in successfully");
-        navigate("/home");
-      } else {
-        // Si el usuario no existe, mostrar un mensaje de error
-        alert("Invalid phone number or password");
-      }
+    if (phone.length != phoneLengthCountry) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "The phone number does not match the length of your country " + phoneLengthCountry,
+      });
+      return;
     }
-    else{
-      alert("La contraseña no coincide con la longitud del número de teléfono");
+    const user = users.find(
+      (u) => u.phone === prefix + phone && u.password === password
+    );
+    if (user) {
+      setUser(user);
+      setChangePage(true);
+    }
+    else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Incorrect password or email",
+      });
+      setChangePage(false);
     }
   };
+
+  // Este useEffect se ejecuta cada vez que se actualiza el estado de userState
+  useEffect(() => {
+    localStorage.setItem("userData", JSON.stringify(userState));
+    if (changePage) {
+      Swal.fire({
+        icon: "success",
+        title: "Login successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setTimeout(() => {
+      navigate("/home");
+      }, 1500);
+    }
+  }, [userState]);
 
   const handleCountry = (element) => {
     setPrefix(
@@ -68,7 +96,6 @@ function LoginUser() {
     setPhoneLengthCountry(
       element.phone && element.phone.length > 0 ? element.phoneLength : 0
     );
-    
   };
 
   return (

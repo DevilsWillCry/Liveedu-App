@@ -2,43 +2,389 @@
   "users": [
     {
       "id": "1",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
+      "name": "Miguel Angel Meñaca Coral",
+      "email": "miguel.delta21@gmail.com",
       "phone": "+573017815945",
       "password": "password123",
-      "coins": 400
+      "coins": 400,
+      "purchasedCourses": [
+        {
+          "id": "1",
+          "title": "Elementary",
+          "price": 350,
+          "purchasedAt": "22-10-2024T18:30:00"
+        }
+      ]
+    },
+    {
+      "id": "3346",
+      "name": "Silvia Coral",
+      "email": "miguel.delta21@gmial.com",
+      "phone": "+573178465152",
+      "password": "3172554231Miguel",
+      "coins": 400,
+      "purchasedCourses": []
+    },
+    {
+      "id": "086f6eb2-6dea-4fc8-83af-422046c263c0",
+      "name": "mIGUEL 10",
+      "email": "miguel@hotmail.com",
+      "phone": "+573178465151",
+      "password": "password123",
+      "coins": 400,
+      "purchasedCourses": []
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Elementary",
+      "image": "/src/assets/elementals-home.png",
+      "description": "For beginners and intermediates",
+      "price": 350,
+      "rating": 5.5,
+      "level": "Beginner",
+      "topics": ["HTML", "CSS", "JavaScript"],
+      "duration": "60 minutes",
+      "AllCourses": [
+        {
+          "HTML": [
+            {
+              "name": "Introduction to HTML",
+              "video": "https://example.com/html_intro",
+              "description": "Learn the basics of HTML and how to structure a webpage."
+            },
+            {
+              "name": "HTML Tags and Attributes",
+              "video": "https://example.com/html_tags",
+              "description": "Understand HTML tags and attributes to build web content."
+            },
+            {
+              "name": "Creating Links and Lists in HTML",
+              "video": "https://example.com/html_links_lists",
+              "description": "Learn how to create hyperlinks and organize lists in HTML."
+            },
+            {
+              "name": "HTML Tables: Structuring Data",
+              "video": "https://example.com/html_tables",
+              "description": "Learn how to use HTML tables to display data in a structured format."
+            },
+            {
+              "name": "HTML Forms: Getting User Input",
+              "video": "https://example.com/html_forms",
+              "description": "Understand how to create forms to collect user input on a webpage."
+            },
+            {
+              "name": "HTML Images: Adding Visual Content",
+              "video": "https://example.com/html_images",
+              "description": "Learn how to embed images in your HTML document for visual appeal."
+            },
+            {
+              "name": "HTML Multimedia: Audio and Video",
+              "video": "https://example.com/html_multimedia",
+              "description": "Discover how to embed audio and video in HTML."
+            },
+            {
+              "name": "HTML5 Semantic Elements",
+              "video": "https://example.com/html_semantic",
+              "description": "Use semantic elements in HTML5 to create meaningful webpage structures."
+            },
+            {
+              "name": "HTML Meta Tags and SEO",
+              "video": "https://example.com/html_meta",
+              "description": "Understand how to use meta tags for better SEO and webpage visibility."
+            },
+            {
+              "name": "HTML Best Practices and Accessibility",
+              "video": "https://example.com/html_accessibility",
+              "description": "Learn HTML best practices to ensure accessibility for all users."
+            }
+          ]
+        },
+        {
+          "CSS": [
+            {
+              "name": "Introduction to CSS",
+              "video": "https://example.com/css_intro",
+              "description": "Get started with CSS and learn how to style a webpage."
+            },
+            {
+              "name": "CSS Selectors and Properties",
+              "video": "https://example.com/css_selectors",
+              "description": "Explore CSS selectors and properties to target and style elements."
+            },
+            {
+              "name": "Styling Text with CSS",
+              "video": "https://example.com/css_text",
+              "description": "Learn how to style text using CSS properties like color, font, and size."
+            },
+            {
+              "name": "CSS Box Model",
+              "video": "https://example.com/css_box_model",
+              "description": "Understand the CSS box model, including margins, borders, padding, and content."
+            },
+            {
+              "name": "CSS Layout with Display and Position",
+              "video": "https://example.com/css_layout",
+              "description": "Learn how to control the layout of elements using CSS display and position properties."
+            },
+            {
+              "name": "CSS Flexbox Basics",
+              "video": "https://example.com/css_flexbox",
+              "description": "Discover the fundamentals of CSS Flexbox for responsive layouts."
+            },
+            {
+              "name": "CSS Grid Layout",
+              "video": "https://example.com/css_grid",
+              "description": "Learn how to use CSS Grid for complex, two-dimensional layouts."
+            },
+            {
+              "name": "CSS Colors and Backgrounds",
+              "video": "https://example.com/css_colors_backgrounds",
+              "description": "Learn how to apply colors and background images in CSS."
+            },
+            {
+              "name": "CSS Transitions and Animations",
+              "video": "https://example.com/css_animations",
+              "description": "Discover how to create smooth transitions and animations with CSS."
+            },
+            {
+              "name": "Responsive Design with Media Queries",
+              "video": "https://example.com/css_responsive",
+              "description": "Learn how to make your website responsive using CSS media queries."
+            }
+          ]
+        },
+        {
+          "JavaScript": [
+            {
+              "name": "Introduction to JavaScript",
+              "video": "https://example.com/js_intro",
+              "description": "Learn the basics of JavaScript and how it adds interactivity to web pages."
+            },
+            {
+              "name": "JavaScript Variables and Data Types",
+              "video": "https://example.com/js_variables",
+              "description": "Understand variables and data types to store and manipulate information."
+            },
+            {
+              "name": "JavaScript Operators and Expressions",
+              "video": "https://example.com/js_operators",
+              "description": "Learn about operators and expressions to perform calculations and comparisons."
+            },
+            {
+              "name": "Control Flow in JavaScript: if-else and Switch",
+              "video": "https://example.com/js_control_flow",
+              "description": "Master conditional statements to control the flow of your JavaScript code."
+            },
+            {
+              "name": "JavaScript Loops: for and while",
+              "video": "https://example.com/js_loops",
+              "description": "Learn how to use loops to execute code repeatedly in JavaScript."
+            },
+            {
+              "name": "JavaScript Functions: Defining and Calling",
+              "video": "https://example.com/js_functions",
+              "description": "Understand how to define and invoke functions to organize and reuse code."
+            },
+            {
+              "name": "JavaScript Arrays: Working with Collections",
+              "video": "https://example.com/js_arrays",
+              "description": "Learn how to work with arrays to store multiple values in a single variable."
+            },
+            {
+              "name": "JavaScript Objects: Key-Value Pairs",
+              "video": "https://example.com/js_objects",
+              "description": "Discover how to use objects to structure data with key-value pairs."
+            },
+            {
+              "name": "JavaScript DOM Manipulation",
+              "video": "https://example.com/js_dom",
+              "description": "Learn how to interact with and modify HTML elements using the DOM."
+            },
+            {
+              "name": "JavaScript Events: Handling User Interaction",
+              "video": "https://example.com/js_events",
+              "description": "Understand how to handle user interactions like clicks and key presses with events."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "2",
-      "name": "Jane Smith",
-      "email": "jane.smith@example.com",
-      "phone": "+573017815945",
-      "password": "secret123",
-      "coins": 400
-    },
-    {
-      "id": "5576",
-      "name": "Maya Alejandra",
-      "email": "mayra@gmail.com",
-      "phone": "+573017815945",
-      "password": "password123",
-      "coins": 400
-    },
-    {
-      "id": "ce7e",
-      "name": "Ernesto Meñaca",
-      "email": "ernesto@gmail.com",
-      "phone": "+573155403143",
-      "password": "password123",
-      "coins": 400
-    },
-    {
-      "id": "93d9",
-      "name": "Silvia Coral",
-      "email": "silvia@gmail.com",
-      "phone": "+573017815945",
-      "password": "password123",
-      "coins": 400
+      "name": "Advanced",
+      "image": "/src/assets/advanced-home-2.jpg",
+      "description": "For experienced developers and professionals",
+      "price": 500,
+      "rating": 4.9,
+      "level": "Advanced",
+      "topics": ["HTML", "CSS", "JavaScript"],
+      "duration": "90 minutes",
+      "AllCourses": [
+        {
+          "HTML": [
+            {
+              "name": "Advanced HTML Forms and Validation",
+              "video": "https://example.com/html_advanced_forms",
+              "description": "Learn how to create advanced forms with built-in validation and custom input types."
+            },
+            {
+              "name": "HTML5 Web Storage",
+              "video": "https://example.com/html_web_storage",
+              "description": "Explore how to store data locally in the browser using HTML5 Web Storage."
+            },
+            {
+              "name": "HTML5 Canvas: Drawing Graphics",
+              "video": "https://example.com/html_canvas",
+              "description": "Discover how to use the HTML5 Canvas element to draw and animate graphics."
+            },
+            {
+              "name": "Embedding SVG in HTML",
+              "video": "https://example.com/html_svg",
+              "description": "Learn how to embed scalable vector graphics (SVG) directly into HTML."
+            },
+            {
+              "name": "HTML5 Geolocation API",
+              "video": "https://example.com/html_geolocation",
+              "description": "Understand how to use the HTML5 Geolocation API to get a user’s location."
+            },
+            {
+              "name": "Responsive Images with HTML5",
+              "video": "https://example.com/html_responsive_images",
+              "description": "Learn techniques for optimizing and serving responsive images in HTML5."
+            },
+            {
+              "name": "HTML5 Audio and Video: Advanced Features",
+              "video": "https://example.com/html_audio_video",
+              "description": "Explore the advanced features of embedding and controlling media with HTML5."
+            },
+            {
+              "name": "HTML5 Drag and Drop API",
+              "video": "https://example.com/html_drag_drop",
+              "description": "Learn how to implement drag-and-drop functionality in your web applications."
+            },
+            {
+              "name": "HTML5 Web Workers",
+              "video": "https://example.com/html_web_workers",
+              "description": "Discover how to use Web Workers to run scripts in the background for better performance."
+            },
+            {
+              "name": "Using ARIA for Web Accessibility",
+              "video": "https://example.com/html_aria",
+              "description": "Learn how to use ARIA attributes to improve web accessibility for users with disabilities."
+            }
+          ]
+        },
+        {
+          "CSS": [
+            {
+              "name": "Advanced CSS Selectors",
+              "video": "https://example.com/css_advanced_selectors",
+              "description": "Learn to use advanced CSS selectors like pseudo-classes, pseudo-elements, and attribute selectors."
+            },
+            {
+              "name": "CSS Variables (Custom Properties)",
+              "video": "https://example.com/css_variables",
+              "description": "Discover how to use CSS variables to create reusable and maintainable styles."
+            },
+            {
+              "name": "CSS Grid: Advanced Layout Techniques",
+              "video": "https://example.com/css_grid_advanced",
+              "description": "Master advanced CSS Grid techniques for creating complex layouts with ease."
+            },
+            {
+              "name": "CSS Flexbox: Advanced Alignment and Ordering",
+              "video": "https://example.com/css_flexbox_advanced",
+              "description": "Learn advanced Flexbox techniques for controlling the alignment and ordering of elements."
+            },
+            {
+              "name": "Responsive Design: Advanced Media Queries",
+              "video": "https://example.com/css_media_queries_advanced",
+              "description": "Use advanced media queries to create highly responsive web designs."
+            },
+            {
+              "name": "CSS Animations: Keyframes and Transitions",
+              "video": "https://example.com/css_animations_advanced",
+              "description": "Explore the power of CSS animations using keyframes and transitions for dynamic effects."
+            },
+            {
+              "name": "CSS Shapes and Clipping",
+              "video": "https://example.com/css_shapes_clipping",
+              "description": "Learn how to create complex shapes and apply clipping paths in CSS."
+            },
+            {
+              "name": "CSS Grid and Flexbox Combined",
+              "video": "https://example.com/css_grid_flexbox",
+              "description": "Understand how to combine CSS Grid and Flexbox for flexible, responsive layouts."
+            },
+            {
+              "name": "CSS Transforms: 2D and 3D Transformations",
+              "video": "https://example.com/css_transforms",
+              "description": "Learn how to apply 2D and 3D transformations to elements for advanced visual effects."
+            },
+            {
+              "name": "CSS Architecture: BEM and OOCSS",
+              "video": "https://example.com/css_bem_oocss",
+              "description": "Discover CSS methodologies like BEM (Block Element Modifier) and OOCSS (Object-Oriented CSS) for scalable and maintainable code."
+            }
+          ]
+        },
+        {
+          "JavaScript": [
+            {
+              "name": "JavaScript ES6: New Features and Syntax",
+              "video": "https://example.com/js_es6_features",
+              "description": "Explore the new features introduced in ES6, including let, const, arrow functions, and more."
+            },
+            {
+              "name": "Asynchronous JavaScript: Promises and Async/Await",
+              "video": "https://example.com/js_async_await",
+              "description": "Learn how to handle asynchronous code using Promises and the modern async/await syntax."
+            },
+            {
+              "name": "JavaScript Closures and Scope",
+              "video": "https://example.com/js_closures_scope",
+              "description": "Understand the concept of closures, scope, and how they are used in JavaScript."
+            },
+            {
+              "name": "JavaScript Modules: Import and Export",
+              "video": "https://example.com/js_modules",
+              "description": "Discover how to organize code with JavaScript modules using the import/export syntax."
+            },
+            {
+              "name": "JavaScript Event Loop and Concurrency",
+              "video": "https://example.com/js_event_loop",
+              "description": "Learn how JavaScript’s event loop works and how it handles concurrency."
+            },
+            {
+              "name": "JavaScript Prototypes and Inheritance",
+              "video": "https://example.com/js_prototypes_inheritance",
+              "description": "Dive deep into JavaScript’s prototype-based inheritance model and how it differs from class-based inheritance."
+            },
+            {
+              "name": "JavaScript Error Handling: try/catch and Custom Errors",
+              "video": "https://example.com/js_error_handling",
+              "description": "Master error handling in JavaScript with try/catch and creating custom error objects."
+            },
+            {
+              "name": "Advanced DOM Manipulation",
+              "video": "https://example.com/js_advanced_dom",
+              "description": "Learn advanced techniques for manipulating the Document Object Model (DOM) with JavaScript."
+            },
+            {
+              "name": "JavaScript Design Patterns",
+              "video": "https://example.com/js_design_patterns",
+              "description": "Understand popular design patterns in JavaScript for writing clean, maintainable code."
+            },
+            {
+              "name": "JavaScript Memory Management and Optimization",
+              "video": "https://example.com/js_memory_management",
+              "description": "Learn how JavaScript handles memory and techniques to optimize performance and memory usage."
+            }
+          ]
+        }
+      ]
     }
   ]
 }
