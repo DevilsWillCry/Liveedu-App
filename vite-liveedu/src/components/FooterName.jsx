@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import Coin from "../assets/coin-svgrepo-com.svg";
 import Bell from "../assets/bell-svgrepo-com.svg";
 
-import { Outlet, useParams } from "react-router-dom";
-import { Spinner } from "@material-tailwind/react";
-
 function FooterName({ text }) {
   const [user, setUser] = useState({});
 

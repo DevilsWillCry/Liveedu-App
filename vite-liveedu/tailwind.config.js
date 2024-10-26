@@ -24,10 +24,15 @@ export default  withMT( {
           '0%': { maskImage: 'linear-gradient(to bottom, black 100%, transparent 100%)' },
           '100%': { maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
       },
       animation: {
         autoShow: 'autoShowAnimation 1s ease-in-out both',
         'bottom-fade': 'bottom-fade 0s ease-in-out forwards',
+        wiggle: 'wiggle 0.5s ease-in-out infinite',
       },
     },
   },

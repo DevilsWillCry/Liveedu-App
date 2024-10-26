@@ -16,7 +16,7 @@ import Profile from "./components/Profile";
 import Stadistics from "./components/Stadistics";
 import CourseDetail from "./components/CourseDetail";
 import CourseThemeDetail from "./components/CourseThemeDetail";
-import FooterNameLayout from "./components/FooterName";
+import QuizzesComponent from "./components/QuizzesComponent";
 
 function App() {
   const images = [Slider1, Slider2, Slider3];
@@ -38,6 +38,10 @@ function App() {
         <Route
           path="/course/:id/theme/:themeId"
           element={<CourseThemeDetail />}
+        />
+        <Route
+          path="/quiz/:id/theme/:themeId"
+          element={<QuizzesComponent />}
         />
         <Route path="*" element={<NoMatch />} />
       </Routes>

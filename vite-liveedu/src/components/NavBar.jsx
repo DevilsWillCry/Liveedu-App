@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 
 import HomeIcon from "../assets/home-icon.svg";
 import TestIcon from "../assets/test-icon.svg";
 import StadisticIcon from "../assets/stadistic-icon.svg";
 import ProfileIcon from "../assets/profile-icon.svg";
+
 
 const ArrayIcons = [
   {
@@ -33,7 +34,7 @@ function NavBar() {
   const [activeIcon, setActiveIcon] = useState(0); // Estado para almacenar el icono presionado
 
   const handleToggleMenu = (index) => {
-    setActiveIcon(index !== activeIcon ? index: null);
+    setActiveIcon(index !== activeIcon ? index: index);
   };
 
   return (
@@ -70,4 +71,4 @@ function NavbarLayout() {
   );
 }
 
-export default NavbarLayout;
+export default memo(NavbarLayout);

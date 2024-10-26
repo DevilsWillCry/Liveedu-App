@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Course from "./Course";
 
+import { CheckIcon } from "@heroicons/react/24/solid";
 import { Spinner } from "@material-tailwind/react";
 
 import { coursesURL } from "../services/routes";
@@ -31,6 +32,7 @@ function HomePage() {
       setLoading(false);
     }
   };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -48,6 +50,7 @@ function HomePage() {
           {courses.map((course) => (
             <Link key={course.id} to={`/course/${course.id}`}>
               <Course
+                isPurchased={user.purchasedCourses.some(courses => courses.id === course.id)}
                 rating={course.rating}
                 image={course.image}
                 title={course.name}
