@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { coursesURL } from "../services/routes";
 import getCourses from "../services/courses/getCourses";
 
 import { Spinner } from "@material-tailwind/react";
-import { list } from "postcss";
+import Swal from 'sweetalert2'
+import { ArrowLeftIcon } from "@heroicons/react/16/solid";
 
 import LetterA from "../assets/letter-uppercase-a-svgrepo-com.svg";
 import LetterB from "../assets/letter-uppercase-b-svgrepo-com.svg";
 import LetterC from "../assets/letter-uppercase-c-svgrepo-com.svg";
 import LetterD from "../assets/letter-uppercase-d-svgrepo-com.svg";
+
 import MyButton from "./MyButton";
 
 function QuizzesComponent() {
   const { id, themeId } = useParams();
+
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({});
   const [course, setCourse] = useState(null);
   const [QuizzesTheme, setQuizzes] = useState(null);
@@ -26,8 +31,7 @@ function QuizzesComponent() {
   const [isIncorrect, setIsIncorrect] = useState(false);
   const [correctAnswer, setCorrectAnswer] = useState(null); // Nuevo estado para la respuesta
   const [loading, setLoading] = useState(true);
-
-  console.log("id: ", id, " theme: ", themeId);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const Letters = [LetterA, LetterB, LetterC, LetterD];
 
@@ -68,11 +72,21 @@ function QuizzesComponent() {
     );
   }
 
-
-
   const handleNextQuestion = () => {
+
+    if (selectedAnswer === null) {
+      return (Swal.fire({
+        title: 'Wait buddy!',
+        text: 'Select any option to continue',
+        icon: 'warning',
+        confirmButtonText: 'You right'
+      })
+    ); // Si no hay respuesta seleccionada, no avanza a la siguiente pregunta
+    }
+
     const currentQuestion = QuizzesTheme[currentQuestionIndex];
     setCorrectAnswer(currentQuestion.correctAnswer);
+    setIsTransitioning(true)
 
     if (selectedAnswer === QuizzesTheme[currentQuestionIndex].correctAnswer) {
       setIsCorrect(true);
@@ -87,22 +101,32 @@ function QuizzesComponent() {
       if (currentQuestionIndex < QuizzesTheme.length - 1) {
         setCurrentQuestionIndex(currentQuestionIndex + 1); // Reinicia la respuesta seleccionada
         setSelectedAnswer(null); // Reinicia la respuesta seleccionada
+        setIsTransitioning(false)
+
       } else {
         alert("You've completed the quiz!");
+        setIsQuizFinished(true);
       }
     }, 2000);
     // Avanza a la siguiente pregunta si no es la última
   };
 
+  if (isQuizFinished) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1>Quiz finished!</h1>
+        <h2>Your score: {score}/{QuizzesTheme.length}</h2>
+        <MyButton text="Back to Home" onClick={() => navigate("/home")} />
+      </div>
+    );
+  }
 
-  console.log(
-    "Correct Answer! ",
-    isCorrect,
-    "Incorrect Answer :c ",
-    isIncorrect
-  );
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
+      <ArrowLeftIcon
+        className="absolute top-0 left-0 transition-all w-[25px] h-[25px] hover:scale-125 hover:-translate-x-2"
+        onClick={() => navigate("/tests")}
+      />
       <h1>Quizzes for {course?.name}</h1>
       {/* Render quiz components here */}
       {QuizzesTheme.length > 0 ? (
@@ -119,6 +143,7 @@ function QuizzesComponent() {
                 <button
                   className="flex flex-row gap-x-1"
                   onClick={() => setSelectedAnswer(option.id)}
+                  disabled={isTransitioning}
                 >
                   <img
                     className={`max-w-full h-[35px] max-sm:h-[10vw] rounded-sm 

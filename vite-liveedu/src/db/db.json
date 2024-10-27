@@ -5,6 +5,7 @@
       "name": "Miguel Angel Meñaca Coral",
       "email": "miguel.delta21@gmail.com",
       "phone": "+573017815945",
+      "country": "Colombia",
       "password": "password123",
       "coins": 400,
       "purchasedCourses": [
@@ -18,34 +19,66 @@
     },
     {
       "id": "3346",
-      "name": "Silvia Coral",
-      "email": "miguel.delta21@gmail.com",
+      "name": "silvia1997",
+      "email": "silviacoral@gmail.com",
       "phone": "+573178465152",
-      "password": "3172554231Miguel",
-      "coins": 400,
+      "country": "Colombia",
+      "password": "password123",
+      "coins": 50,
       "purchasedCourses": [
+        {
+          "id": "2",
+          "title": "Advanced",
+          "price": 350,
+          "purchasedAt": "27/10/2024"
+        },
         {
           "id": "1",
           "title": "Elementary",
           "price": 350,
-          "purchasedAt": "22-10-2024T18:30:00"
-        },
-        {
-          "id": "2",
-          "title": "Avandced",
-          "price": 500,
-          "purchasedAt": "24-10-2024T18:30:00"
+          "purchasedAt": "27/10/2024"
         }
       ]
     },
     {
       "id": "086f6eb2-6dea-4fc8-83af-422046c263c0",
-      "name": "mIGUEL 10",
-      "email": "miguel@hotmail.com",
+      "name": "Miguel Angel Coral",
+      "email": "miguel.delta15@gmail.com",
       "phone": "+573178465151",
+      "country": "Colombia",
       "password": "password123",
-      "coins": 400,
-      "purchasedCourses": []
+      "coins": 200,
+      "purchasedCourses": [
+        {
+          "id": "1",
+          "title": "Elementary",
+          "price": 350,
+          "purchasedAt": "26/10/2024"
+        },
+        {
+          "id": "2",
+          "title": "Advanced",
+          "price": 350,
+          "purchasedAt": "26/10/2024"
+        }
+      ]
+    },
+    {
+      "id": "7d97835e-5453-4c94-a25d-45272833df27",
+      "name": "Miguel Angel 5",
+      "email": "miguel@gmail.com",
+      "phone": "+573177891234",
+      "country": "Colombia",
+      "password": "password123",
+      "coins": 50,
+      "purchasedCourses": [
+        {
+          "id": "1",
+          "title": "Elementary",
+          "price": 350,
+          "purchasedAt": "27/10/2024"
+        }
+      ]
     }
   ],
   "courses": [
@@ -57,7 +90,11 @@
       "price": 350,
       "rating": 5.5,
       "level": "Beginner",
-      "topics": ["HTML", "CSS", "JavaScript"],
+      "topics": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "duration": "60 minutes",
       "AllCourses": [
         {
@@ -123,10 +160,22 @@
               "id": "1",
               "question": "What is the purpose of HTML?",
               "options": [
-                { "id": "1", "answer": "To structure a webpage." },
-                { "id": "2", "answer": "To display visual content." },
-                { "id": "3", "answer": "To create interactive web pages." },
-                { "id": "4", "answer": "To control the layout of elements." }
+                {
+                  "id": "1",
+                  "answer": "To structure a webpage."
+                },
+                {
+                  "id": "2",
+                  "answer": "To display visual content."
+                },
+                {
+                  "id": "3",
+                  "answer": "To create interactive web pages."
+                },
+                {
+                  "id": "4",
+                  "answer": "To control the layout of elements."
+                }
               ],
               "correctAnswer": "1"
             },
@@ -138,9 +187,18 @@
                   "id": "1",
                   "answer": "A unique identifier for HTML elements."
                 },
-                { "id": "2", "answer": "A style applied to an HTML tag." },
-                { "id": "3", "answer": "Extra information about an HTML tag." },
-                { "id": "4", "answer": "A structural component of HTML." }
+                {
+                  "id": "2",
+                  "answer": "A style applied to an HTML tag."
+                },
+                {
+                  "id": "3",
+                  "answer": "Extra information about an HTML tag."
+                },
+                {
+                  "id": "4",
+                  "answer": "A structural component of HTML."
+                }
               ],
               "correctAnswer": "3"
             },
@@ -148,10 +206,22 @@
               "id": "3",
               "question": "Which tag is used to create a hyperlink in HTML?",
               "options": [
-                { "id": "1", "answer": "<link>" },
-                { "id": "2", "answer": "<a>" },
-                { "id": "3", "answer": "<href>" },
-                { "id": "4", "answer": "<hyperlink>" }
+                {
+                  "id": "1",
+                  "answer": "<link>"
+                },
+                {
+                  "id": "2",
+                  "answer": "<a>"
+                },
+                {
+                  "id": "3",
+                  "answer": "<href>"
+                },
+                {
+                  "id": "4",
+                  "answer": "<hyperlink>"
+                }
               ],
               "correctAnswer": "2"
             },
@@ -159,13 +229,22 @@
               "id": "4",
               "question": "What is the purpose of HTML tables?",
               "options": [
-                { "id": "1", "answer": "To structure webpage layout." },
-                { "id": "2", "answer": "To display multimedia content." },
+                {
+                  "id": "1",
+                  "answer": "To structure webpage layout."
+                },
+                {
+                  "id": "2",
+                  "answer": "To display multimedia content."
+                },
                 {
                   "id": "3",
                   "answer": "To organize data in rows and columns."
                 },
-                { "id": "4", "answer": "To create user forms." }
+                {
+                  "id": "4",
+                  "answer": "To create user forms."
+                }
               ],
               "correctAnswer": "3"
             },
@@ -173,10 +252,22 @@
               "id": "5",
               "question": "What is an HTML form used for?",
               "options": [
-                { "id": "1", "answer": "To style elements on the page." },
-                { "id": "2", "answer": "To collect user input." },
-                { "id": "3", "answer": "To display images on the page." },
-                { "id": "4", "answer": "To create page layout." }
+                {
+                  "id": "1",
+                  "answer": "To style elements on the page."
+                },
+                {
+                  "id": "2",
+                  "answer": "To collect user input."
+                },
+                {
+                  "id": "3",
+                  "answer": "To display images on the page."
+                },
+                {
+                  "id": "4",
+                  "answer": "To create page layout."
+                }
               ],
               "correctAnswer": "2"
             },
@@ -184,10 +275,22 @@
               "id": "6",
               "question": "Which tag is used to display images in HTML?",
               "options": [
-                { "id": "1", "answer": "<picture>" },
-                { "id": "2", "answer": "<img>" },
-                { "id": "3", "answer": "<media>" },
-                { "id": "4", "answer": "<src>" }
+                {
+                  "id": "1",
+                  "answer": "<picture>"
+                },
+                {
+                  "id": "2",
+                  "answer": "<img>"
+                },
+                {
+                  "id": "3",
+                  "answer": "<media>"
+                },
+                {
+                  "id": "4",
+                  "answer": "<src>"
+                }
               ],
               "correctAnswer": "2"
             },
@@ -195,10 +298,22 @@
               "id": "7",
               "question": "How do you embed audio or video in HTML?",
               "options": [
-                { "id": "1", "answer": "Using <media> tags." },
-                { "id": "2", "answer": "Using <embed> and <object> tags." },
-                { "id": "3", "answer": "Using <audio> and <video> tags." },
-                { "id": "4", "answer": "Using <sound> and <movie> tags." }
+                {
+                  "id": "1",
+                  "answer": "Using <media> tags."
+                },
+                {
+                  "id": "2",
+                  "answer": "Using <embed> and <object> tags."
+                },
+                {
+                  "id": "3",
+                  "answer": "Using <audio> and <video> tags."
+                },
+                {
+                  "id": "4",
+                  "answer": "Using <sound> and <movie> tags."
+                }
               ],
               "correctAnswer": "3"
             },
@@ -206,9 +321,18 @@
               "id": "8",
               "question": "What are semantic HTML elements used for?",
               "options": [
-                { "id": "1", "answer": "To style HTML content." },
-                { "id": "2", "answer": "To create interactive forms." },
-                { "id": "3", "answer": "To add functionality to HTML." },
+                {
+                  "id": "1",
+                  "answer": "To style HTML content."
+                },
+                {
+                  "id": "2",
+                  "answer": "To create interactive forms."
+                },
+                {
+                  "id": "3",
+                  "answer": "To add functionality to HTML."
+                },
                 {
                   "id": "4",
                   "answer": "To create meaningful webpage structures."
@@ -220,10 +344,22 @@
               "id": "9",
               "question": "What are meta tags in HTML primarily used for?",
               "options": [
-                { "id": "1", "answer": "To add CSS styles." },
-                { "id": "2", "answer": "For SEO and webpage information." },
-                { "id": "3", "answer": "To create responsive layouts." },
-                { "id": "4", "answer": "For displaying multimedia content." }
+                {
+                  "id": "1",
+                  "answer": "To add CSS styles."
+                },
+                {
+                  "id": "2",
+                  "answer": "For SEO and webpage information."
+                },
+                {
+                  "id": "3",
+                  "answer": "To create responsive layouts."
+                },
+                {
+                  "id": "4",
+                  "answer": "For displaying multimedia content."
+                }
               ],
               "correctAnswer": "2"
             },
@@ -235,8 +371,14 @@
                   "id": "1",
                   "answer": "Using descriptive alt attributes for images."
                 },
-                { "id": "2", "answer": "Avoiding semantic tags." },
-                { "id": "3", "answer": "Minimizing the use of forms." },
+                {
+                  "id": "2",
+                  "answer": "Avoiding semantic tags."
+                },
+                {
+                  "id": "3",
+                  "answer": "Minimizing the use of forms."
+                },
                 {
                   "id": "4",
                   "answer": "Adding custom attributes for all tags."
@@ -374,7 +516,11 @@
       "price": 500,
       "rating": 4.9,
       "level": "Advanced",
-      "topics": ["HTML", "CSS", "JavaScript"],
+      "topics": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "duration": "90 minutes",
       "AllCourses": [
         {

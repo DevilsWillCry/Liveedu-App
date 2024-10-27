@@ -58,7 +58,7 @@ function TestsCourses() {
         ) : (
           courses.map((course) => (
             <div className="text-center" key={course.id}>
-              <h1 className="font-bold text-[#4B4B4B] mb-3">{course.name} Quizzes</h1>
+              {user.purchasedCourses.some((purchased) => purchased.id === course.id) ? <h1 className="font-bold text-[#4B4B4B] mb-3">{course.name} Quizzes</h1> : ""}
               {user.purchasedCourses.some(
                 (purchased) => purchased.id === course.id
               ) &&
@@ -105,7 +105,7 @@ function TestsCourses() {
                       </div>
                       <MenuItem className="sticky bottom-0 bg-white">
                         <Link to={`/quiz/${course.id}/theme/${theme.id}`}>
-                          <Button className="bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] text-[#4B4B4B] w-full z-30">
+                          <Button className="bg-gradient-to-r from-[#FFC1C1] to-[#E6A0DC] text-[#4B4B4B] w-full z-30">
                             Start Quiz!
                           </Button>
                         </Link>

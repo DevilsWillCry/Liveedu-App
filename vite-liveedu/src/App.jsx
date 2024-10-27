@@ -17,12 +17,14 @@ import Stadistics from "./components/Stadistics";
 import CourseDetail from "./components/CourseDetail";
 import CourseThemeDetail from "./components/CourseThemeDetail";
 import QuizzesComponent from "./components/QuizzesComponent";
+import ProfileDetail from "./components/ProfileDetail";
+import TransactionDetail from "./components/TransactionDetail";
 
 function App() {
   const images = [Slider1, Slider2, Slider3];
 
   return (
-    <main className="flex flex-col h-screen items-center justify-center font-Inter">
+    <main className="flex flex-col h-screen items-center justify-center font-Inter bg-white">
       <Routes>
         <Route path="/" element={<ImageSlider images={images} />} />
         <Route path="/login" element={<LoginUser />} />
@@ -43,6 +45,8 @@ function App() {
           path="/quiz/:id/theme/:themeId"
           element={<QuizzesComponent />}
         />
+        <Route path="/profile/user-info" element={<ProfileDetail />} />
+        <Route path="/profile/user-transaction-history" element={<TransactionDetail />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </main>
@@ -54,7 +58,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/">Go to the home page</Link>
+        <Link to="/home">Go to the home page</Link>
       </p>
     </div>
   );

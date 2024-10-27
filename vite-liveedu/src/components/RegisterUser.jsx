@@ -29,6 +29,7 @@ function RegisterUser() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [prefix, setPrefix] = useState(countrys[0].phone);
+  const [nameCountry, setNameCountry] = useState(countrys[0].name);
   const [imageCountry, setImageCountry] = useState(countrys[0].image);
   const [phoneLengthCountry, setPhoneLengthCountry] = useState(
     countrys[0].phoneLength
@@ -39,6 +40,7 @@ function RegisterUser() {
   console.log("phone:", prefix + phone);
   console.log("password:", password);
   console.log("Prefijo:", prefix);
+  console.log("Nombre del país:", nameCountry)
   console.log("Imagen del país:", imageCountry);
   console.log("Longitud del número de teléfono:", phoneLengthCountry);
   console.log("phone length:", phone.length);
@@ -50,8 +52,9 @@ function RegisterUser() {
       name,
       email,
       phone: prefix + phone,
+      country: nameCountry,
       password,
-      coins: 400,
+      coins: 1000,
       purchasedCourses: [],
     };
   };
@@ -120,6 +123,8 @@ function RegisterUser() {
   };
 
   const handleCountry = (element) => {
+    setNameCountry(element.name);
+
     setPrefix(
       element.phone && element.phone.length > 0 ? element.phone[0] : "N/A"
     );

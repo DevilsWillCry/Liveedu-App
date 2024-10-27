@@ -3,42 +3,68 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import Coin from "../assets/coin-svgrepo-com.svg";
 
-import { coursesURL } from "../services/routes";
+import { usersURL, coursesURL } from "../services/routes";
 import getCourses from "../services/courses/getCourses";
+import patchUsers from "../services/users/patchUsers";
+import getUsers from "../services/users/getUsers";
 
 import { Spinner } from "@material-tailwind/react";
+import Swal from "sweetalert2";
 import { ArrowLeftIcon, CheckIcon } from "@heroicons/react/24/solid";
 
 import MyButton from "./MyButton";
 
 function CourseDetail() {
   const { id } = useParams();
-  const [user, setUser] = useState({});
-  const [course, setCourse] = useState(null);
-  const [loading, setLoading] = useState(true);
+  
   const navigate = useNavigate(null);
 
-  const coursesData = async () => {
-    try {
-      const courses = await getCourses(coursesURL);
-      setLoading(false);
-      return courses;
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-      return [];
-    }
-  };
+
+  const [user, setUser] = useState({});
+  const [allUsers, setAllUsers] = useState({});
+  const [course, setCourse] = useState(null);
+  const [isChangedAccount, setisChangedAccount] = useState(false);
+  const [dataToChange, setdataToChange] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     if (localStorage.getItem("userData")) {
       setUser(JSON.parse(localStorage.getItem("userData")));
     }
-    const courseData = coursesData().then((courses) => {
-      const courseFound = courses.find((c) => c.id === id);
-      setCourse(courseFound);
-    });
-  }, []);
+
+    const updateUser = async () => {
+      if (isChangedAccount) {
+        console.log("YEAAAH");
+        await patchUsers(`${usersURL}/${user.id}`, dataToChange);
+        setisChangedAccount(false);
+      }
+    };
+    updateUser();
+  }, [isChangedAccount]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const [users, courses] = await Promise.all([
+          getUsers(usersURL),
+          getCourses(coursesURL),
+        ]);
+
+        setAllUsers(users);
+
+        const courseFound = courses.find((c) => c.id === id);
+        setCourse(courseFound);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [usersURL, coursesURL]);
 
   if (loading) {
     return (
@@ -50,6 +76,73 @@ function CourseDetail() {
 
   function backToPage() {
     navigate("/home");
+  }
+
+  function handlePurchasedCourse() {
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("es-ES", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+
+    if (user.coins >= course.price) {
+      Swal.fire({
+        title: `<h1 style='font-size: 1.5rem;'> Are you want to purchased course ${course.name}? :D </h1> `,
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#bfc3fc",
+        cancelButtonColor: "#ef5350",
+        confirmButtonText: "<span style='color: #4b4b4b;'>Yes, I want it!</span>",
+        cancelButtonText: "<span style='color: #4b4b4b;'>No, cancel</span>",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const updateCoins = user.coins - course.price;
+          const updatePurchasedCourses = {
+            id,
+            title: course.name,
+            price: 350,
+            purchasedAt: formattedDate,
+          };
+
+          const updatedUser = {
+            ...user,
+            coins: updateCoins,
+            purchasedCourses: [
+              ...user.purchasedCourses,
+              updatePurchasedCourses,
+            ],
+            purchasedAt: formattedDate,
+          };
+
+          localStorage.setItem("userData", JSON.stringify(updatedUser));
+          setdataToChange({
+            coins: updateCoins,
+            purchasedCourses: [
+              ...user.purchasedCourses,
+              updatePurchasedCourses,
+            ],
+          });
+          setisChangedAccount(true);
+          Swal.fire({
+            icon: "success",
+            title: "Purchase successful!",
+            showConfirmButton: false,
+            timer: 1500
+          }
+          );
+          setTimeout(() => {
+            navigate("/home");
+          })
+        }
+      });
+    } else {
+      Swal.fire(
+        "Purchase failed!",
+        "You don't have founds, buy more coins!",
+        "warning"
+      );
+    }
   }
 
   return (
@@ -71,7 +164,7 @@ function CourseDetail() {
             <h1 className="text-2xl font-bold">{course.name}</h1>
             <p className="text-xs">{course.description}</p>
           </div>
-          {user.purchasedCourses.some(courses => courses.id === id) ? (
+          {user.purchasedCourses.some((courses) => courses.id === id) ? (
             <div className="flex flex-row gap-x-3 items-start w-[30px] h-[30px] bg-green-400 rounded-full p-1 mr-2">
               <CheckIcon />
             </div>
@@ -98,12 +191,9 @@ function CourseDetail() {
           </div>
         ))}
       </div>
-      {user.purchasedCourses.some(courses => courses.id === id) ? 
-      null
-      :
-      (<MyButton text={"Buy Now"} />)
-       }
-      
+      {user.purchasedCourses.some((courses) => courses.id === id) ? null : (
+        <MyButton onClick={handlePurchasedCourse} text={"Buy Now"} />
+      )}
     </div>
   );
 }

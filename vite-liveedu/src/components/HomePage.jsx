@@ -41,6 +41,7 @@ function HomePage() {
     );
   }
 
+
   return (
     <div className="bg-white w-full h-full items-center">
       <FooterName text={"Let's start learning"} />
