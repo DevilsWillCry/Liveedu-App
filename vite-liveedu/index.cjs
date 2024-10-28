@@ -1,9 +1,6 @@
-import jsonServer from 'json-server';
-import path from 'path';
-import express from 'express'; // Asegúrate de tener express instalado
-
+const jsonServer = require("json-server");
 const server = jsonServer.create();
-const router = jsonServer.router('./src/db/db.json');
+const router = jsonServer.router("./src/db/db.json");
 const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 3000;
 
