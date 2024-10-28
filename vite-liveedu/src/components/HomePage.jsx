@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import Course from "./Course";
 
-import { CheckIcon } from "@heroicons/react/24/solid";
 import { Spinner } from "@material-tailwind/react";
 
 import { coursesURL } from "../services/routes";
@@ -10,6 +9,8 @@ import getCourses from "../services/courses/getCourses";
 
 import { Link } from "react-router-dom";
 import FooterName from "./FooterName";
+
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 function HomePage() {
   const [user, setUser] = useState({});
   const [courses, setCourses] = useState({});
@@ -43,7 +44,7 @@ function HomePage() {
 
 
   return (
-    <div className="bg-white w-full h-full items-center">
+    <div className="bg-white w-full h-full items-center overflow-y-auto scroll-auto mb-10">
       <FooterName text={"Let's start learning"} />
       <div className="p-3">
         <h1>Courses</h1>
@@ -61,8 +62,19 @@ function HomePage() {
             </Link>
           ))}
         </div>
-        <h1>Topics for Study</h1>
-        <div></div>
+        <h1 className="p-1 mt-3">Topics for Study</h1>
+        <div className="flex flex-col p-1 gap-y-3">
+          {courses.map((course) => (
+            user.purchasedCourses.some(courses => courses.id === course.id) ? 
+            <Link key={course.id} to={`/course/${course.id}`}>
+            <div className="relative flex flex-row  justify-between  w-full p-2 bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] rounded-xl items-center">
+              <h2 className="text-[#4B4B4B] font-bold">{course.name}</h2>
+              <ChevronDoubleRightIcon className="w-[30px] h-[30px] animate-bounce-horizontal" />
+            </div>
+            </Link>:
+              ("")
+          ))}
+        </div>
       </div>
     </div>
   );

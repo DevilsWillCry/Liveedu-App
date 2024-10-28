@@ -1,29 +1,20 @@
 import React, { useEffect, useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
-
 import MyButton from "./MyButton";
 import PasswordInput from "./PassWordInput";
-
 import getUsers from "../services/users/getUsers";
 import postUsers from "../services/users/postUsers";
+
 import { usersURL } from "../services/routes";
+
 import countrys from "../db/country-codes.json";
-
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
-
 import Swal from "sweetalert2";
-
-import {
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-} from "@material-tailwind/react";
+import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
 
 function RegisterUser() {
   const navigate = useNavigate();
-  // Definición de estados para cada campo
+  const [id, setId] = useState(crypto.randomUUID()); // Genera el ID una sola vez
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -31,24 +22,11 @@ function RegisterUser() {
   const [prefix, setPrefix] = useState(countrys[0].phone);
   const [nameCountry, setNameCountry] = useState(countrys[0].name);
   const [imageCountry, setImageCountry] = useState(countrys[0].image);
-  const [phoneLengthCountry, setPhoneLengthCountry] = useState(
-    countrys[0].phoneLength
-  );
-
-  console.log("Name: ", name);
-  console.log("email:", email);
-  console.log("phone:", prefix + phone);
-  console.log("password:", password);
-  console.log("Prefijo:", prefix);
-  console.log("Nombre del país:", nameCountry)
-  console.log("Imagen del país:", imageCountry);
-  console.log("Longitud del número de teléfono:", phoneLengthCountry);
-  console.log("phone length:", phone.length);
-
+  const [phoneLengthCountry, setPhoneLengthCountry] = useState(countrys[0].phoneLength);
 
   const createUserData = () => {
     return {
-      id: crypto.randomUUID(),
+      id, 
       name,
       email,
       phone: prefix + phone,
@@ -59,10 +37,12 @@ function RegisterUser() {
     };
   };
 
-  const userPostData = async () =>{
+  const userPostData = async () => {
     try {
       const users = await getUsers(usersURL);
-      const userExist = users.some((user) => user.email === email ||  user.phone === (prefix + phone));
+      const userExist = users.some(
+        (user) => user.email === email || user.phone === prefix + phone
+      );
       if (userExist) {
         Swal.fire({
           icon: "error",
@@ -71,7 +51,7 @@ function RegisterUser() {
         });
         return;
       } else {
-        const userData = createUserData()
+        const userData = createUserData();
         await postUsers(usersURL, userData);
         Swal.fire({
           icon: "success",
@@ -79,9 +59,8 @@ function RegisterUser() {
           showConfirmButton: false,
           timer: 1500,
         });
-        //* : Redirección a la página de inicio de sesión o al menú principal cuando la cuenta se crea correctamente.
         setTimeout(() => {
-          navigate("/home"); //TODO ----> sujeto a cambios, navigate("/verification-account") <------- TODO//
+          navigate("/home");
         }, 1600);
       }
     } catch (error) {
@@ -92,7 +71,7 @@ function RegisterUser() {
   const sendVerification = async (e) => {
     e.preventDefault();
 
-    if (phone.length != phoneLengthCountry) {
+    if (phone.length !== phoneLengthCountry) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -101,43 +80,20 @@ function RegisterUser() {
       return;
     }
 
-    await userPostData(); //TODO Enviar los datos al backend para crear la cuenta
-
-    /* 
-    try {
-      const response = await fetch("http://localhost:3001/verify", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ number: prefix + phone }),
-      });
-
-      const data = await response.json();
-      console.log(data);
-      navigate("/verification-account");
-    } catch (error) {
-      console.error("Error al enviar la petición de verificación:", error);
-    }
-      */
+    await userPostData();
   };
 
   const handleCountry = (element) => {
     setNameCountry(element.name);
-
-    setPrefix(
-      element.phone && element.phone.length > 0 ? element.phone[0] : "N/A"
-    );
+    setPrefix(element.phone && element.phone.length > 0 ? element.phone[0] : "N/A");
     setImageCountry(element.image);
-
-    setPhoneLengthCountry(
-      element.phone && element.phone.length > 0 ? element.phoneLength : 0
-    );
+    setPhoneLengthCountry(element.phone && element.phone.length > 0 ? element.phoneLength : 0);
   };
 
-  useEffect(() =>{
+  useEffect(() => {
+    // Guarda los datos con el ID generado
     localStorage.setItem("userData", JSON.stringify(createUserData()));
-  }, [name, email, phone, password]);
+  }, [id, name, email, phone, password]);
 
   return (
     <div className="flex flex-col w-full h-full items-center justify-center mt-[20%]">
@@ -148,7 +104,6 @@ function RegisterUser() {
           existing account
         </p>
       </div>
-      {/* Envuelve los inputs en un formulario */}
       <form
         onSubmit={sendVerification}
         className="flex flex-col items-center justify-center w-full my-5 gap-y-3"
@@ -158,8 +113,8 @@ function RegisterUser() {
             className="w-full rounded-xl p-3 focus:outline-none"
             type="text"
             placeholder="John Doe"
-            value={name} // Enlazar el estado
-            onChange={(e) => setName(e.target.value)} // Actualizar el estado
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -168,8 +123,8 @@ function RegisterUser() {
             className="w-full rounded-xl p-3 focus:outline-none"
             type="email"
             placeholder="name@example.com"
-            value={email} // Enlazar el estado
-            onChange={(e) => setEmail(e.target.value)} // Actualizar el estado
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -208,15 +163,15 @@ function RegisterUser() {
             className="relative w-full rounded-xl p-3 focus:outline-none z-10"
             type="number"
             placeholder="Phone number"
-            value={phone} // Enlazar el estado
-            onChange={(e) => setPhone(e.target.value)} // Actualizar el estado
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>
         <div className="rounded-xl p-[0.15rem] bg-gradient-to-r from-[#BFC3FC] to-[#A2C3FC] w-[95%] mb-[20%]">
           <PasswordInput
-            value={password} // Enlazar el estado
-            onChange={(e) => setPassword(e.target.value)} // Actualizar el estado
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <MyButton type="submit" text={"Create"} />

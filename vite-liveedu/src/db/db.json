@@ -19,7 +19,7 @@
     },
     {
       "id": "3346",
-      "name": "silvia1997",
+      "name": "Miguel Angel",
       "email": "silviacoral@gmail.com",
       "phone": "+573178465152",
       "country": "Colombia",
@@ -71,6 +71,56 @@
       "country": "Colombia",
       "password": "password123",
       "coins": 50,
+      "purchasedCourses": [
+        {
+          "id": "1",
+          "title": "Elementary",
+          "price": 350,
+          "purchasedAt": "27/10/2024"
+        }
+      ]
+    },
+    {
+      "id": "9e1f22dd-f8af-4aae-b86d-ae03e529798d",
+      "name": "Miguel Angel 10",
+      "email": "miguelangel60@gmail.com",
+      "phone": "+573178456234",
+      "country": "Colombia",
+      "password": "password123",
+      "coins": 150,
+      "purchasedCourses": [
+        {
+          "id": "1",
+          "title": "Elementary",
+          "price": 350,
+          "purchasedAt": "27/10/2024"
+        },
+        {
+          "id": "2",
+          "title": "Advanced",
+          "price": 350,
+          "purchasedAt": "27/10/2024"
+        }
+      ]
+    },
+    {
+      "id": "8b1f7402-67fc-44aa-8fbf-9d4e34f2f758",
+      "name": "Ernesto Meñaca",
+      "email": "ernesto@gmail.com",
+      "phone": "+573155403143",
+      "country": "Colombia",
+      "password": "password123",
+      "coins": 1000,
+      "purchasedCourses": []
+    },
+    {
+      "id": "018183aa-b98c-4813-bb13-794b66e11aba",
+      "name": "Mayra Alejandra",
+      "email": "mayra@gmail.com",
+      "phone": "+573017815948",
+      "country": "Colombia",
+      "password": "password123",
+      "coins": 650,
       "purchasedCourses": [
         {
           "id": "1",
@@ -445,6 +495,238 @@
               "video": "https://example.com/css_responsive",
               "description": "Learn how to make your website responsive using CSS media queries."
             }
+          ],
+          "quizzes": [
+            {
+              "id": "1",
+              "question": "What does CSS stand for?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Computer Style Sheets"
+                },
+                {
+                  "id": "2",
+                  "answer": "Creative Style Sheets"
+                },
+                {
+                  "id": "3",
+                  "answer": "Cascading Style Sheets"
+                },
+                {
+                  "id": "4",
+                  "answer": "Colorful Style Sheets"
+                }
+              ],
+              "correctAnswer": "3"
+            },
+            {
+              "id": "2",
+              "question": "Which CSS selector is used to apply styles to all elements of a specific type?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Class selector"
+                },
+                {
+                  "id": "2",
+                  "answer": "ID selector"
+                },
+                {
+                  "id": "3",
+                  "answer": "Universal selector"
+                },
+                {
+                  "id": "4",
+                  "answer": "Type selector"
+                }
+              ],
+              "correctAnswer": "4"
+            },
+            {
+              "id": "3",
+              "question": "Which CSS property is used to change the text color of an element?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "font-color"
+                },
+                {
+                  "id": "2",
+                  "answer": "text-color"
+                },
+                {
+                  "id": "3",
+                  "answer": "color"
+                },
+                {
+                  "id": "4",
+                  "answer": "font-style"
+                }
+              ],
+              "correctAnswer": "3"
+            },
+            {
+              "id": "4",
+              "question": "In the CSS box model, which property is used to add space inside the border of an element?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "margin"
+                },
+                {
+                  "id": "2",
+                  "answer": "padding"
+                },
+                {
+                  "id": "3",
+                  "answer": "border"
+                },
+                {
+                  "id": "4",
+                  "answer": "width"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "5",
+              "question": "Which CSS property is used to control the layout by setting elements side-by-side?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "position"
+                },
+                {
+                  "id": "2",
+                  "answer": "float"
+                },
+                {
+                  "id": "3",
+                  "answer": "display"
+                },
+                {
+                  "id": "4",
+                  "answer": "clear"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "6",
+              "question": "What is the main purpose of Flexbox in CSS?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To create grids"
+                },
+                {
+                  "id": "2",
+                  "answer": "To align items horizontally and vertically"
+                },
+                {
+                  "id": "3",
+                  "answer": "To set font sizes"
+                },
+                {
+                  "id": "4",
+                  "answer": "To add animations"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "7",
+              "question": "What does the 'grid-template-columns' property do in CSS Grid?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Sets the layout for grid rows"
+                },
+                {
+                  "id": "2",
+                  "answer": "Defines the number and width of columns in the grid"
+                },
+                {
+                  "id": "3",
+                  "answer": "Controls the space between grid items"
+                },
+                {
+                  "id": "4",
+                  "answer": "Sets the alignment of grid items"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "8",
+              "question": "Which CSS property is used to set a background color for an element?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "color"
+                },
+                {
+                  "id": "2",
+                  "answer": "background-color"
+                },
+                {
+                  "id": "3",
+                  "answer": "border-color"
+                },
+                {
+                  "id": "4",
+                  "answer": "fill-color"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "9",
+              "question": "What is a common unit of time for defining CSS animations?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "seconds (s)"
+                },
+                {
+                  "id": "2",
+                  "answer": "frames (f)"
+                },
+                {
+                  "id": "3",
+                  "answer": "milliseconds (ms)"
+                },
+                {
+                  "id": "4",
+                  "answer": "ticks (t)"
+                }
+              ],
+              "correctAnswer": "3"
+            },
+            {
+              "id": "10",
+              "question": "Which of the following is a correct media query to apply styles to screens smaller than 600px?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "@media only screen and (max-width: 600px)"
+                },
+                {
+                  "id": "2",
+                  "answer": "@media screen and width < 600px"
+                },
+                {
+                  "id": "3",
+                  "answer": "@media (screen-width: 600px)"
+                },
+                {
+                  "id": "4",
+                  "answer": "@media screen-size: max-600px"
+                }
+              ],
+              "correctAnswer": "1"
+            }
           ]
         },
         {
@@ -503,6 +785,238 @@
               "name": "JavaScript Events: Handling User Interaction",
               "video": "https://example.com/js_events",
               "description": "Understand how to handle user interactions like clicks and key presses with events."
+            }
+          ],
+          "quizzes": [
+            {
+              "id": "1",
+              "question": "What is the primary purpose of JavaScript on a webpage?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To style the webpage."
+                },
+                {
+                  "id": "2",
+                  "answer": "To add interactivity to the webpage."
+                },
+                {
+                  "id": "3",
+                  "answer": "To structure the webpage."
+                },
+                {
+                  "id": "4",
+                  "answer": "To store data permanently."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "2",
+              "question": "What keyword is used to declare a variable in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "var"
+                },
+                {
+                  "id": "2",
+                  "answer": "let"
+                },
+                {
+                  "id": "3",
+                  "answer": "const"
+                },
+                {
+                  "id": "4",
+                  "answer": "All of the above"
+                }
+              ],
+              "correctAnswer": "4"
+            },
+            {
+              "id": "3",
+              "question": "Which operator is used to check for both value and type equality in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "=="
+                },
+                {
+                  "id": "2",
+                  "answer": "!="
+                },
+                {
+                  "id": "3",
+                  "answer": "==="
+                },
+                {
+                  "id": "4",
+                  "answer": "&&"
+                }
+              ],
+              "correctAnswer": "3"
+            },
+            {
+              "id": "4",
+              "question": "Which JavaScript keyword is used to create a conditional statement?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "if"
+                },
+                {
+                  "id": "2",
+                  "answer": "for"
+                },
+                {
+                  "id": "3",
+                  "answer": "switch"
+                },
+                {
+                  "id": "4",
+                  "answer": "else"
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "5",
+              "question": "Which loop continues until a specified condition is false?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "while"
+                },
+                {
+                  "id": "2",
+                  "answer": "for"
+                },
+                {
+                  "id": "3",
+                  "answer": "do-while"
+                },
+                {
+                  "id": "4",
+                  "answer": "All of the above"
+                }
+              ],
+              "correctAnswer": "4"
+            },
+            {
+              "id": "6",
+              "question": "How is a function called in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "function call"
+                },
+                {
+                  "id": "2",
+                  "answer": "invoke()"
+                },
+                {
+                  "id": "3",
+                  "answer": "function()"
+                },
+                {
+                  "id": "4",
+                  "answer": "By its name followed by parentheses"
+                }
+              ],
+              "correctAnswer": "4"
+            },
+            {
+              "id": "7",
+              "question": "Which method can be used to add an item to the end of an array?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "add()"
+                },
+                {
+                  "id": "2",
+                  "answer": "push()"
+                },
+                {
+                  "id": "3",
+                  "answer": "insert()"
+                },
+                {
+                  "id": "4",
+                  "answer": "append()"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "8",
+              "question": "What is the main purpose of an object in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To store a single value"
+                },
+                {
+                  "id": "2",
+                  "answer": "To structure data using key-value pairs"
+                },
+                {
+                  "id": "3",
+                  "answer": "To perform mathematical calculations"
+                },
+                {
+                  "id": "4",
+                  "answer": "To define an array"
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "9",
+              "question": "Which method is commonly used to select an HTML element by its ID in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "getElementById()"
+                },
+                {
+                  "id": "2",
+                  "answer": "querySelector()"
+                },
+                {
+                  "id": "3",
+                  "answer": "selectElement()"
+                },
+                {
+                  "id": "4",
+                  "answer": "getElement()"
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "10",
+              "question": "Which event is triggered when a user clicks an element?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "keydown"
+                },
+                {
+                  "id": "2",
+                  "answer": "mouseover"
+                },
+                {
+                  "id": "3",
+                  "answer": "click"
+                },
+                {
+                  "id": "4",
+                  "answer": "focus"
+                }
+              ],
+              "correctAnswer": "3"
             }
           ]
         }
@@ -580,6 +1094,238 @@
               "video": "https://example.com/html_aria",
               "description": "Learn how to use ARIA attributes to improve web accessibility for users with disabilities."
             }
+          ],
+          "quizzes": [
+            {
+              "id": "1",
+              "question": "What is the purpose of using validation in HTML forms?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To ensure data integrity and prevent incorrect submissions."
+                },
+                {
+                  "id": "2",
+                  "answer": "To style the form fields."
+                },
+                {
+                  "id": "3",
+                  "answer": "To improve webpage performance."
+                },
+                {
+                  "id": "4",
+                  "answer": "To increase loading speed of the form."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "2",
+              "question": "What can HTML5 Web Storage be used for?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Storing data on the server."
+                },
+                {
+                  "id": "2",
+                  "answer": "Storing data locally in the user's browser."
+                },
+                {
+                  "id": "3",
+                  "answer": "Storing files in the cloud."
+                },
+                {
+                  "id": "4",
+                  "answer": "Creating animations."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "3",
+              "question": "What is the purpose of the HTML5 Canvas element?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To embed videos on a webpage."
+                },
+                {
+                  "id": "2",
+                  "answer": "To draw and animate graphics."
+                },
+                {
+                  "id": "3",
+                  "answer": "To manage file downloads."
+                },
+                {
+                  "id": "4",
+                  "answer": "To validate forms."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "4",
+              "question": "What is SVG primarily used for in HTML?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To store webpage data."
+                },
+                {
+                  "id": "2",
+                  "answer": "To embed scalable vector graphics."
+                },
+                {
+                  "id": "3",
+                  "answer": "To improve HTML performance."
+                },
+                {
+                  "id": "4",
+                  "answer": "To apply validation rules to forms."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "5",
+              "question": "What does the HTML5 Geolocation API allow you to do?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Determine a user's location."
+                },
+                {
+                  "id": "2",
+                  "answer": "Draw shapes on a webpage."
+                },
+                {
+                  "id": "3",
+                  "answer": "Optimize image size."
+                },
+                {
+                  "id": "4",
+                  "answer": "Store data locally in the user's browser."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "6",
+              "question": "How can responsive images be implemented in HTML5?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "By using inline styles."
+                },
+                {
+                  "id": "2",
+                  "answer": "By using the srcset attribute."
+                },
+                {
+                  "id": "3",
+                  "answer": "By applying ARIA attributes."
+                },
+                {
+                  "id": "4",
+                  "answer": "By using the canvas element."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "7",
+              "question": "Which element is used for embedding audio and video in HTML5?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "<media>"
+                },
+                {
+                  "id": "2",
+                  "answer": "<embed>"
+                },
+                {
+                  "id": "3",
+                  "answer": "<audio> and <video>"
+                },
+                {
+                  "id": "4",
+                  "answer": "<canvas>"
+                }
+              ],
+              "correctAnswer": "3"
+            },
+            {
+              "id": "8",
+              "question": "What does the HTML5 Drag and Drop API allow?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Adding transitions to elements."
+                },
+                {
+                  "id": "2",
+                  "answer": "Dragging and dropping elements on the webpage."
+                },
+                {
+                  "id": "3",
+                  "answer": "Implementing animations."
+                },
+                {
+                  "id": "4",
+                  "answer": "Storing data locally in the user's browser."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "9",
+              "question": "How does HTML5 Web Workers improve performance?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "By running scripts in the background."
+                },
+                {
+                  "id": "2",
+                  "answer": "By increasing storage space."
+                },
+                {
+                  "id": "3",
+                  "answer": "By controlling audio playback."
+                },
+                {
+                  "id": "4",
+                  "answer": "By applying form validation."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "10",
+              "question": "What is the role of ARIA attributes in HTML?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To add styling to elements."
+                },
+                {
+                  "id": "2",
+                  "answer": "To improve web accessibility for users with disabilities."
+                },
+                {
+                  "id": "3",
+                  "answer": "To embed media files."
+                },
+                {
+                  "id": "4",
+                  "answer": "To implement form validation."
+                }
+              ],
+              "correctAnswer": "2"
+            }
           ]
         },
         {
@@ -639,6 +1385,238 @@
               "video": "https://example.com/css_bem_oocss",
               "description": "Discover CSS methodologies like BEM (Block Element Modifier) and OOCSS (Object-Oriented CSS) for scalable and maintainable code."
             }
+          ],
+          "quizzes": [
+            {
+              "id": "1",
+              "question": "What are pseudo-classes in CSS?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Selectors that style elements based on their state."
+                },
+                {
+                  "id": "2",
+                  "answer": "Selectors that apply styles based on the element's type."
+                },
+                {
+                  "id": "3",
+                  "answer": "Selectors that target all elements."
+                },
+                {
+                  "id": "4",
+                  "answer": "Selectors that style elements based on their class."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "2",
+              "question": "How can CSS variables be beneficial in your styles?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "They increase loading time."
+                },
+                {
+                  "id": "2",
+                  "answer": "They allow for reusable and maintainable styles."
+                },
+                {
+                  "id": "3",
+                  "answer": "They apply styles only to specific elements."
+                },
+                {
+                  "id": "4",
+                  "answer": "They reduce the need for media queries."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "3",
+              "question": "What is CSS Grid primarily used for?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Creating animations."
+                },
+                {
+                  "id": "2",
+                  "answer": "Creating complex layouts."
+                },
+                {
+                  "id": "3",
+                  "answer": "Styling text."
+                },
+                {
+                  "id": "4",
+                  "answer": "Validating forms."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "4",
+              "question": "What does the Flexbox model allow you to do?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Create fixed layouts."
+                },
+                {
+                  "id": "2",
+                  "answer": "Control the alignment and ordering of elements."
+                },
+                {
+                  "id": "3",
+                  "answer": "Style images."
+                },
+                {
+                  "id": "4",
+                  "answer": "Implement animations."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "5",
+              "question": "What is the purpose of advanced media queries in responsive design?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To set fixed widths for elements."
+                },
+                {
+                  "id": "2",
+                  "answer": "To apply styles based on screen size and resolution."
+                },
+                {
+                  "id": "3",
+                  "answer": "To add animations."
+                },
+                {
+                  "id": "4",
+                  "answer": "To validate user inputs."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "6",
+              "question": "What are keyframes in CSS animations?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "The points that define the start and end of a CSS animation."
+                },
+                {
+                  "id": "2",
+                  "answer": "The CSS properties for a specific element."
+                },
+                {
+                  "id": "3",
+                  "answer": "The style rules for media queries."
+                },
+                {
+                  "id": "4",
+                  "answer": "The selectors used for elements."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "7",
+              "question": "How can CSS clipping paths be used?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To define visible regions of an element."
+                },
+                {
+                  "id": "2",
+                  "answer": "To create hover effects."
+                },
+                {
+                  "id": "3",
+                  "answer": "To apply transitions."
+                },
+                {
+                  "id": "4",
+                  "answer": "To style text."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "8",
+              "question": "What is the benefit of combining CSS Grid and Flexbox?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To create complex layouts more efficiently."
+                },
+                {
+                  "id": "2",
+                  "answer": "To improve page load speed."
+                },
+                {
+                  "id": "3",
+                  "answer": "To reduce the size of stylesheets."
+                },
+                {
+                  "id": "4",
+                  "answer": "To limit responsive design capabilities."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "9",
+              "question": "What types of transformations can CSS apply?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "2D and 3D transformations."
+                },
+                {
+                  "id": "2",
+                  "answer": "Only 2D transformations."
+                },
+                {
+                  "id": "3",
+                  "answer": "Only 3D transformations."
+                },
+                {
+                  "id": "4",
+                  "answer": "None."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "10",
+              "question": "What do BEM and OOCSS methodologies help with?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Improving performance."
+                },
+                {
+                  "id": "2",
+                  "answer": "Creating scalable and maintainable CSS code."
+                },
+                {
+                  "id": "3",
+                  "answer": "Styling animations."
+                },
+                {
+                  "id": "4",
+                  "answer": "Adding media queries."
+                }
+              ],
+              "correctAnswer": "2"
+            }
           ]
         },
         {
@@ -697,6 +1675,238 @@
               "name": "JavaScript Memory Management and Optimization",
               "video": "https://example.com/js_memory_management",
               "description": "Learn how JavaScript handles memory and techniques to optimize performance and memory usage."
+            }
+          ],
+          "quizzes": [
+            {
+              "id": "1",
+              "question": "What is the purpose of the `let` and `const` keywords in ES6?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To declare variables with block scope."
+                },
+                {
+                  "id": "2",
+                  "answer": "To create global variables."
+                },
+                {
+                  "id": "3",
+                  "answer": "To define functions."
+                },
+                {
+                  "id": "4",
+                  "answer": "To import modules."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "2",
+              "question": "How do Promises improve asynchronous programming in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "By replacing callbacks with synchronous code."
+                },
+                {
+                  "id": "2",
+                  "answer": "By allowing handling of asynchronous operations with chaining."
+                },
+                {
+                  "id": "3",
+                  "answer": "By providing a way to block code execution."
+                },
+                {
+                  "id": "4",
+                  "answer": "By making all operations synchronous."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "3",
+              "question": "What are closures in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Functions that can access variables from their parent scope."
+                },
+                {
+                  "id": "2",
+                  "answer": "Global variables."
+                },
+                {
+                  "id": "3",
+                  "answer": "A method to handle events."
+                },
+                {
+                  "id": "4",
+                  "answer": "A way to import modules."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "4",
+              "question": "What is the main purpose of JavaScript modules?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To create a single global variable."
+                },
+                {
+                  "id": "2",
+                  "answer": "To encapsulate and organize code."
+                },
+                {
+                  "id": "3",
+                  "answer": "To enhance performance."
+                },
+                {
+                  "id": "4",
+                  "answer": "To simplify error handling."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "5",
+              "question": "What does the event loop do in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "It blocks code execution."
+                },
+                {
+                  "id": "2",
+                  "answer": "It handles asynchronous callbacks."
+                },
+                {
+                  "id": "3",
+                  "answer": "It compiles JavaScript code."
+                },
+                {
+                  "id": "4",
+                  "answer": "It manages memory."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "6",
+              "question": "How does JavaScript's prototype-based inheritance work?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "It uses classes to define behavior."
+                },
+                {
+                  "id": "2",
+                  "answer": "It allows objects to inherit properties from other objects."
+                },
+                {
+                  "id": "3",
+                  "answer": "It prevents inheritance."
+                },
+                {
+                  "id": "4",
+                  "answer": "It is similar to interfaces in Java."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "7",
+              "question": "What is the purpose of the `try/catch` statement in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "To create a new object."
+                },
+                {
+                  "id": "2",
+                  "answer": "To handle errors gracefully."
+                },
+                {
+                  "id": "3",
+                  "answer": "To define functions."
+                },
+                {
+                  "id": "4",
+                  "answer": "To manage asynchronous operations."
+                }
+              ],
+              "correctAnswer": "2"
+            },
+            {
+              "id": "8",
+              "question": "What are some techniques for advanced DOM manipulation?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Using inline styles."
+                },
+                {
+                  "id": "2",
+                  "answer": "Using the `innerHTML` property exclusively."
+                },
+                {
+                  "id": "3",
+                  "answer": "Using methods like `appendChild`, `removeChild`, and event listeners."
+                },
+                {
+                  "id": "4",
+                  "answer": "Only using jQuery."
+                }
+              ],
+              "correctAnswer": "3"
+            },
+            {
+              "id": "9",
+              "question": "What are design patterns in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "Standard solutions to common programming problems."
+                },
+                {
+                  "id": "2",
+                  "answer": "Unique coding styles."
+                },
+                {
+                  "id": "3",
+                  "answer": "Only related to UI design."
+                },
+                {
+                  "id": "4",
+                  "answer": "A way to create global variables."
+                }
+              ],
+              "correctAnswer": "1"
+            },
+            {
+              "id": "10",
+              "question": "How can you optimize memory management in JavaScript?",
+              "options": [
+                {
+                  "id": "1",
+                  "answer": "By using global variables."
+                },
+                {
+                  "id": "2",
+                  "answer": "By minimizing object creation and using weak references."
+                },
+                {
+                  "id": "3",
+                  "answer": "By avoiding functions."
+                },
+                {
+                  "id": "4",
+                  "answer": "By keeping all data in memory."
+                }
+              ],
+              "correctAnswer": "2"
             }
           ]
         }

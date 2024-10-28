@@ -53,9 +53,9 @@ function CourseDetail() {
         ]);
 
         setAllUsers(users);
-
-        const courseFound = courses.find((c) => c.id === id);
+        const courseFound = courses.find((c) => c.id === id);        
         setCourse(courseFound);
+
       } catch (error) {
         console.error(error);
       } finally {
@@ -64,7 +64,7 @@ function CourseDetail() {
     };
 
     fetchData();
-  }, [usersURL, coursesURL]);
+  }, [isChangedAccount, usersURL, coursesURL]);
 
   if (loading) {
     return (

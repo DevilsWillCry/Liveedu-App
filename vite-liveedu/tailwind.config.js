@@ -27,12 +27,17 @@ export default  withMT( {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
-        }
+        },
+        'bounce-horizontal': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(5px)' },
+        },
       },
       animation: {
         autoShow: 'autoShowAnimation 1s ease-in-out both',
         'bottom-fade': 'bottom-fade 0s ease-in-out forwards',
         wiggle: 'wiggle 0.5s ease-in-out infinite',
+        'bounce-horizontal': 'bounce-horizontal 1s ease-in-out infinite',
       },
     },
   },
